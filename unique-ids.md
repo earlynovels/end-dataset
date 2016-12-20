@@ -1,7 +1,0 @@
- ##### Guide to END unique IDs in 001 control field 
- 
-  - All records cataloged to 2013 have randomly-generated sequential ID numbers in the 001 field. Most from Penn include Franklin BibIDs are included in the 035 field, but many do not include OCLC numbers. These were cataloged from several different institutions: Penn RBML (now Kislak), Swarthmore College, Bryn Mawr, Library Company, etc.
-  - All records cataloged in the summer of 2014 were cataloged in google sheets and converted to XML. They are missing some of the automated fields that are present in the records that used Franklin catalog records as base entries. They have been remediated to have ID numbers in the 001 field, these follow the sequential schema of the voyager records from 2013 and before.
-  - Records cataloged from the summer of 2015 and from the 2015-2016 academic year have Franklin BibIDs in the 001 field. Duplicate BibIDs are denoted with a -1 -2 etc.
-  - Records cataloged during the summer of 2016 at Penn have Franklin BibIDs in the 001 field. They also have Franklin back-end holdings numbers in the 035 field (not among metadata imported from Franklin--these had to be pulled from the holdings database and collated to individual copies).
-  - Records cataloged during the summer of 2016 at NYU have OCLC numbers in the 001 field.
