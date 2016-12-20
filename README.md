@@ -210,62 +210,62 @@ $d initials of quality control editor
 1. Most minimal version: titles (first full 246), authors, and dates 
 2. Fullest version (below)
 
--Catalog title [field name?]:
+- Catalog title [field name?]:
 Concatenate (single field) catalog title, catalog subtitle, catalog statement of responsibility (245 a, 245 b, 245 c)
 
--Full title: 
+- Full title: 
 First 246a where 246g=”full[c]”
 
--Half title: 
+- Half title: 
 First 246a where 246g=”half” if exists 
 
-[-Running titles - first 246a where 246g=”running title” OR “running title verso” or “running title recto”?]
+[- Running titles - first 246a where 246g=”running title” OR “running title verso” or “running title recto”?]
 
--Number of volumes: Last integer in 246$v is number of volumes. If no integer in field, number of volumes = 1. 
+- Number of volumes: Last integer in 246$v is number of volumes. If no integer in field, number of volumes = 1. 
 
--Edition statement from title page
+- Edition statement from title page
 250$a: transcription of full edition statement
 
--Controlled edition statement 
+- Controlled edition statement 
 250$b controlled version of transcribed edition statement [“First edition,” “Second edition,” etc.]
 
--City of publication 
+- City of publication 
 260$a
 
--Publisher
+- Publisher
 710$$ where value = “printed for” 
 If no 710, use 700$4 where value = “printed for”
 
--Printer
+- Printer
 710$4 where value = “printed by” 
 If no 710, use 700$4 where value = “printed by”
 
--Bookseller 
+- Bookseller 
 710$4 where value = “sold by” 
 If not 710, 700$4 where value = “sold by” 
 
--Date of publication 
+- Date of publication 
 008=[bytes 7-10]: Master Pub Date [LINK TO EXPLANATION IN SCHEMA BELOW]
 
 260: Publication and distribution
 
--Place of publication 
+- Place of publication 
 260 $a city of publication as it appears in the text 
 [if multiple volumes, use volume 1][additional places of publication may exists if multiple volumes]
 
--Publisher name transcription from title page 
+- Publisher name transcription from title page 
 260 $b transcription of publisher names and qualifying terms
 
--Date of publication on title page
+- Date of publication on title page
 260 $c date of publication as appears; in roman numerals if applicable [grab FIRST subfield c]
 [if multiple volumes, use volume 1][additional places of publication may exists if multiple volumes]
 
--cataloger notes on publication and distribution 
+- cataloger notes on publication and distribution 
 260 $x notes
 [if multiple volumes, use volume 1]
 
 Format
--300$x [Controlled terms]
+- 300$x [Controlled terms]
 
 Number of volumes: 
 $a
