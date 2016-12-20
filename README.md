@@ -31,13 +31,17 @@ The END dataset is also available in json. Tabular subsets are currently in prog
   - Records cataloged from the summer of 2015 and from the 2015-2016 academic year have Franklin BibIDs in the 001 field. Duplicate BibIDs are denoted with a -1 -2 etc.
   - Records cataloged during the summer of 2016 at Penn have Franklin BibIDs in the 001 field. They also have Franklin back-end holdings numbers in the 035 field (not among metadata imported from Franklin--these had to be pulled from the holdings database and collated to individual copies).
   - Records cataloged during the summer of 2016 at NYU have OCLC numbers in the 001 field.
-- 008: Publication Date, along with other fixed-length data elements 
-  - Publication date for record is in 008 field, positions[bytes] 7-10.
-    - E.g. in <marc:controlfield tag="008">860203s1813        enk               00001 eng d</marc:controlfield> “1813” is the pub date. 
-  - Single pub dates are designated with an “s” in position[byte] 6. A pub date range is designated with an “m” in position[byte?] 6.
-     - E.g. in <marc:controlfield tag="008">851011m18161817enkc              00010aeng d</marc:controlfield> “1816” - “1817” is the pub date range. 
-  - To sort on pub date, pull only the first date in positions[bytes] 7-10. 
- - 035: System Control Number (local control numbers - usually Penn BibID, Call Number, OCLC, etc. Not all records have entries in the 035 field.)
+- 008: Publication Date
+  - Publication date for record is in 008 field, positions[bytes] 7-10. In this example,"1813" is the pub date:
+    ```
+    <marc:controlfield tag="008">860203s1813        enk               00001 >eng d</marc:controlfield>
+    ```
+  - Single pub dates are designated with an “s” in position/byte 6. A pub date range is designated with an “m” in position/byte 6. In this example, “1816-1817” is the pub date range:
+    ```
+    <marc:controlfield tag="008">851011m18161817enkc              00010aeng d</marc:controlfield>
+    ```
+  - To sort on pub date, pull only the first date in positions/bytes 7-10. 
+- 035: System Control Number (local control numbers - usually Penn BibID, Call Number, OCLC, etc. Not all records have entries in the 035 field.)
 - 040: Location ID (For records with Franklin base entries, this is PU, MARC organization code for University of Pennsylvania)
 - 041: Language code
 $a language of the text (eng for English)
