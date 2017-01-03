@@ -321,7 +321,12 @@ $x notes; transcribe interesting quotations and first line of paratext.
 The complex, copy-specific nature of the data is designed for thoroughness rather than for quick analysis. We've provided some sample applications and uses for the data, and look forward to continuing to explore and hear more applications.
 
 1. Copy-Specific Information
-One strength of END is the it gives researchers the ability to delve deeply into a particular copy or author. Are you interested in who published Henry Fielding? Try setting up a filter to just see one author. 
+One strength of END is the it gives researchers the ability to delve deeply into a particular text, volume, or author. 
+
+For example, if you are interested in Henry Fielding, you can set up a filter to see just his works in our tabular data. 
+
+
+From here, it's easier to dig into specific information, such as comparisons in early and later editions of the same work. 
 
 2. Comparative Information
 Pivot tables, which can be created quickly in Microsoft Excel or Google Sheets, should allow for comparison, though the data may need to be cleaned and organized first (we recommend <a href="http://openrefine.org/">OpenRefine</a>). 
