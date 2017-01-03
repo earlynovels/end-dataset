@@ -139,7 +139,7 @@ $v Volume <br>
 $x Notes; include source of translation
 
 - 592: Narrative form<br>
-One of the few fields that refers to the text itself rather than the paratext, this field records the narrative form of the work, based on a quick scan of the text.
+One of the few fields that refers to the text itself rather than the paratext, this field records the narrative form of the work, based on a quick scan of the text.<br>
 $a Primary narrative form [“Epistolary”, “First-person,” “Third-person,” “Dramatic dialogue.”<br>
 $b Additional narrative forms that appear in the text, with same controlled terms as $a. <br>
 $c Non-prose forms [“Poems,” “Sheet music,” "Theatrical dialogue"]<br>
