@@ -1,7 +1,11 @@
 # END Dataset Documentation
 
 #### About the Project
-Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eigtheenth century. 
+Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
+
+<br>
+<img src="https://github.com/imbeths/end-dataset/blob/master/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name." width="500">
+<br>
 
 #### About the Dataset
 The Early Novels Dataset contains bibliographic metadata for eighteenth-century works of fiction held in the [Collection of British and American Fiction, 1660-1830 (CBAF)](http://franklin.library.upenn.edu/search.html?filter.author_creator_facet.val=Collection%20of%20British%20and%20American%20Fiction%2C%201660-1830%20%28University%20of%20Pennsylvania%29) at the University of Pennsylvania’s [Kislak Center for Special Collections, Rare Books and Manuscripts](http://www.library.upenn.edu/kislak/), as well as other regional repositories. It consists of MARC catalog records enriched with custom subfields designed to offer new kinds of structured data about early fiction in English. 
@@ -70,7 +74,7 @@ $g Title page extent [Controlled terms: “Half”, “Full”] Half title pages
 $v Volume in which it is located [Controlled terms: “v.1,” “v.2,” etc.]<br>
 $x Priority—what entity the title page describes [Work, Volume, Section]<br>
 
-- 246 ind1=0 ind2=7: Running title—make two datafields<br>
+- 246 ind1=0 ind2=7: Running title—appears as two datafields<br>
 $a Transcription of running title in full across verso and recto<br>
 246 Ind1=0 Ind2=7<br>
 $a Running title on verso (verso)<br>
