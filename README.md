@@ -57,151 +57,157 @@ $d dates of birth and death
 - 130: Uniform Title
 
 2xx Fields (Derived from base catalog records)
-- 245: Title as cataloged 
-$a Title 
-$b Subtitle
-$c Statement of Responsibility
+- 245: Title as cataloged <br>
+$a Title <br>
+$b Subtitle<br>
+$c Statement of Responsibility<br>
 $n Number of part/section of work
 
-- 246: Title as it appears on title page (there is a separate 246 field for each title page in the work; for instance, a seven-volume novel with a full title page in each volume would have seven repeating 246 fields)
-$a Direct transcription of title as it appears on title page, including all punctuation, volume information (e.g. “Vol. I”, “In two parts.” etc.), and authorial indicators (e.g. “By a lady,” “By the author of...”, etc.). Only the first word of the title and proper nouns are capitalized. 
-$d Print type of volume [Controlled terms: “Letter-press,” “Engraving,” “Manuscript”]
-$g Title page extent [Controlled terms: “Half”, “Full”] Half title pages typically include the title of the work without the publication information, epigraphs, etc., while full title pages include all of this data.
-$v volume in which it is located [Controlled terms: “v.1,” “v.2,” etc.]
-$x priority—what entity the title page describes [Work, Volume, Section]
+- 246: Title as it appears on title page (there is a separate 246 field for each title page in the work; for instance, a seven-volume novel with a full title page in each volume would have seven repeating 246 fields)<br>
+$a Direct transcription of title as it appears on title page, including all punctuation, volume information (e.g. “Vol. I”, “In two parts.” etc.), and authorial indicators (e.g. “By a lady,” “By the author of...”, etc.). Only the first word of the title and proper nouns are capitalized. <br>
+$d Print type of volume [Controlled terms: “Letter-press,” “Engraving,” “Manuscript”]<br>
+$g Title page extent [Controlled terms: “Half”, “Full”] Half title pages typically include the title of the work without the publication information, epigraphs, etc., while full title pages include all of this data.<br>
+$v Volume in which it is located [Controlled terms: “v.1,” “v.2,” etc.]<br>
+$x Priority—what entity the title page describes [Work, Volume, Section]<br>
 
-- 246 ind1=0 ind2=7: Running title—make two datafields
-$a Transcription of running title in full across verso and recto
-$v relevant volumes
-246 Ind1=0 Ind2=7
-$a running title on verso (verso)
-$a running title on recto (recto)
-$v relevant volumes
+- 246 ind1=0 ind2=7: Running title—make two datafields<br>
+$a Transcription of running title in full across verso and recto<br>
+246 Ind1=0 Ind2=7<br>
+$a Running title on verso (verso)<br>
+$a Running title on recto (recto)<br>
+$v Relevant volumes
 
-- 250: Edition statement
-$a transcription of full edition statement
-$b controlled term for transcribed edition statement [“First edition,” “Second edition,” etc.]
-$c authorized edition number if different or absent from $a/$b
-$x transcriptions of edition/revision language in other paratext
+- 250: Edition statement<br>
+$a Transcription of full edition statement, including such terms as “revised,” “enlarged,” “annotated,” etc.
+<br>
+$b Controlled term for transcribed edition statement [“First edition,” “Second edition,” etc.]<br>
+$c Authorized edition number if different or absent from $a/$b<br>
+$x Transcriptions of edition/revision language in other paratext
 
-- 260: Publication and distribution
-$a city of publication as it appears in the text 
-$b transcription of publisher names and qualifying terms
-$c date of publication as appears; in roman numerals if applicable
-$c [SECOND SUBFIELD c] date of publication as appears, converted to arabic numerals
-$v volume(s) $x notes
+- 260: Publication and distribution<br>
+$a City of publication as it appears in the text <br>
+$b Transcription of publisher names and qualifying terms<br>
+$c Date of publication as appears; in roman numerals if applicable<br>
+$c [SECOND SUBFIELD c] date of publication as appears, converted to arabic numerals<br>
+$v Volume(s) <br>
+$x Notes
 
-- 261: Printer info [if “printed by” is different from “printed for”]
-$b transcription
-$f printer name(s)
+- 261: Printer info [if “printed by” is different from “printed for”]<br>
+$b Transcription of the printer information if it is in a different location from the publisher information<br>
+$f Printer name(s)
 
-- 300: Physical bibliographic features
-$a extent—how many pages or volumes
-$b illustrations [“Ill.”, “Ill. (frontispiece),” “Col. Ill.”, “Port.”, “Map”] 
-$c dimensions
-$x format, controlled term [“Folio,” “Duodecimo,” etc.]
-$z work qualifiers such as“In two volumes,” “in five parts” 
+- 300: Physical bibliographic features<br>
+$a Extent—the number of pages or volumes<br>
+$b Illustrations, if any included in work [“Ill.”, “Ill. (frontispiece),” “Col. Ill.”, “Port.”, “Map”]. Descriptions appear in 500 "General Notes" field. <br>
+$c Dimensions<br>
+$x Format, controlled term [“Folio,” “Duodecimo,” etc.]<br>
+$z Work qualifiers such as “In two volumes,” “in five parts” 
 
-- 490: Ind1=0 Collection 
-$a title of collection
-$x notes explaining relation between work and collection
+- 490: Ind1=0 Collections (Published Collection, as in “Collected works of ---” or the like, not the library collection.) <br>
+$a Title of collection<br>
+$x Notes explaining relation between work and collection
 
-- 500: General notes—new datafield for each note
+- 500: General notes—new datafield for each note<br>
 $a Notes that do not fit into other categories, such as bookplates, library marginalia, interesting material characteristics, etc. 
 
-- 520: Paratext
-        $a type of paratext, controlled
-$b transcribe paratext heading
-$c location [“Front,” “Middle”, “Back”]
-$v volume
-$x notes; transcribe interesting quotations and first line of paratext.
+- 520: Paratext<br>
+$a Type of paratext. Standardized terms so far include [About the Author, To the Author, Advertisement [only use if the “Advertisement” is actually a paratextual essay], Afterword,  Apology, Appendix, Character information, Character note, Colophon, Conclusion, Copyright statement, Dedication, Endnotes, Epilogue, Errata, Essay, Footnotes, Glossary, Index, Introduction, Key, Letter, License, List of characters, Memoir, Note, Official note, Poem, Postscript, Preface, Prologue, Review, Subscribers' list, Table of contents, To the Booksellers, To the Reader, To the Reviewer, To the Subscriber, Other]<br>
+$b Transcription of paratext heading: e.g., “The introduction,” “The editor’s preface,” etc.<br>
+$c Location [“Front,” “Middle”, “Back”]<br>
+$v Volume<br>
+$x Notes. Usually includes transcriptions of interesting quotations and the first line of paratext.<br>
 
-- 591: Epigraph
-$a transcription
-$1 source of epigraph as written
-$2 author of epigraph as written
-$b source if known
-$c author if known
-$d translation
-$v volume 
-$x notes; include source of translation
+- 591: Epigraph<br>
+$a Transcription of epigraph<br>
+$1 Epigraph source as it appears in the work: e.g., “Odyss.”, “Merchant of Venice”.<br>
+$2 Epigraph author as it appears in the work: e.g., “Hom.”, “Virg.”, “Shakespear”<br>
+$b Epigraph source if known or discovered<br>
+$c Epigraph author if known or discovered<br>
+$d Translation of the epigraph. If the epigraph is untranslated in the book, catalogers searched for a translation and added an $x that indicates the source of the translation and the language of the original (usually a URL). <br>
+$v Volume <br>
+$x Notes; include source of translation
+
+- 592: Narrative form<br>
+One of the few fields that refers to the text itself rather than the paratext, this field records the narrative form of the work, based on a quick scan of the text.
+$a Primary narrative form [“Epistolary”, “First-person,” “Third-person,” “Dramatic dialogue.”<br>
+$b Additional narrative forms that appear in the text, with same controlled terms as $a. <br>
+$c Non-prose forms [“Poems,” “Sheet music,” "Theatrical dialogue"]<br>
+$d Oddities. This field is for anything we found remarkably strange regarding the narrative form.
+
+- 593: Subscriber’s list<br>
+$a Subscriber names, or the first few if the list is multiple pages<br>
+$x Notes, including an indication of whether the list was too long to record
+
+- 594: Inscription information and provenance markings<br>
+$a Inscription full transcription, including names, dates, messages, etc.<br>
+$b Inscription medium [“Ink”, “Pencil”]<br>
+$x Notes; including location<br>
+$v Volume
+
+- 595: Marginalia<br>
+$a Medium [“Ink”, “Pencil”]<br>
+$b Content description [“Words,” “Drawings”, “Editorial markings,” “Numbers”]<br>
+$v Volume<br>
+$x Notes; includes transcription or further description of marginalia
+
+- 596: Translation, Abridgment, Adaptation information Claim<br>
+$a Type of source claim [“Translation,” “Abridgment”, “Adaptation”, “Revision”]<br>
+$b Location of claim; e.g., title page, dedication, etc.<br>
+$c Direct source language. This is language which this translation, etc. immediately comes from; e.g., "translated from the French." <br>
+$d Indirect source language. This is the language that the original work was originally written in, for example, "Chinese" if the title page says, “From the French, originally from the Chinese.”<br>
+$e Transcription of the translation, abridgment, or adaptation claim.
 
 
-- 592: Narrative form
-$a primary [“Epistolary”, “First-person,” “Third-person,” “Dramatic dialogue.”
-$b additional narrative forms
-$c non-prose [“Poems,” “Sheet music”]
-$d oddities
+- 599: Authorship claim (only claims in paratext: for claims in text, make a 500 $a note).<br>
+We include separate 599 field for each claim that appears in the paratext, including claims of both text and paratext authorship and claims for or by fictional characters.<br>
+$a Author claim type [“Author (text)”, “Author (paratext)”, “Editor (text)”, “Translator (text),” etc.]<br>
+$b Author claim description [“Initials”, “Generic/Descriptive”, “Reference to other works”, “Proper name”]<br>
+$2 Author claim transcription<br>
+$3 Location of author claim<br>
+$5 Author gender claim [“Female,” “Male,” “Indeterminate”]<br>
+$6 Actual author gender if known [“Female,” “Male,” “Unknown”]<br>
+$7 Notes about author claims by fictional characters, transcriptions of relevant quotations
 
-- 593: Subscriber’s list
-$a subscriber names, or the first few if the list is multiple pages
-$x if the list is too long to record, note that here
+- 656: Advertisements<br>
+This field is for parts of the text that explicitly advertise other works or services.<br>
+$a Genre of the works being advertised [“Fiction”, “Non-fiction”, “Drama,” “Poetry,” “Periodical,” “Mixed Genre”, “Miscellaneous”]. <br>
+$b Location of advertisement [“Front,” “Middle,” “Back”].<br>
+$c Advertisement’s relation to work. This subfield describes why these works are being advertised in this specific work (if there is a reason).  [“Same publisher”, “Same genre,” “Same author,” or “No relation”<br>
+$v Volume this section appears in <br>
+$x Notes
 
-- 594: Inscription information and provenance markings
-$a for any inscriptions, transcribe names, dates, messages, etc.
-$b inscription medium [“Ink”, “Pencil”]
-$x notes; including location
-$v volume
+- 700: Personal name authorization from VIAF <br>
+We created separate 700 fields for each nonfictional person identified in the text, and authorized them whenever possible in the <a href="http://viaf.org/">VIAF (Virtual Identity Authority File)</a>.<br>
+$a Name <br>
+$d Dates of birth and death according to VIAF/WorldCat <br>
+$4 Relation to work [“Author (text),” “Author (paratext),” “Editor (text),” “Translator (text),” “Translator (paratext),” “Printed for”, “Printed by”, “Sold by”, “Author (epigraph)”, “Inscribed by”, “Author (bookplate),” “Author (source text),” “Author (illustration),” “Dedicatee”] <br>
+$5 Authorization, noting whether we were able to find the person in VIAF [“Authorized”, “Unauthorized”]
 
-- 595: Marginalia
-$a medium [“Ink”, “Pencil”]
-$b content description [“Words,” “Drawings”, “Editorial markings,” “Numbers”]
-$v volume
-$x notes: transcribe or further describe marginalia
+- 710: Corporate Name<br>
+This field follows the same process as the 700 fields, but this field is only used for “corporate” names (names that refer to a corporate identity, i.e. comprised of multiple people), and mostly is only applicable to books that are printed by or for multiple people</br>
+$a Name of corporation or multiple persons <br>
+$4 Relation to work [“Printed for”, “Printed by”] <br>
+$5 Authorization [“Authorized”, “Unauthorized”] <br>
+710 ind1="2" ind2=" ": Database. This field specifies that this record is a part of the Early Novels Database, and not other databases.<br>
+$a “Early Novels” <br>
+$5 Housing institution [“University of Pennsylvania,” “Library Company,” etc.]
 
+- 989: Enhanced title field keywords <br>
+This field standardizes and lemmatizes words in the title field. Repeated words are only listed once; irregular spellings are included in both the irregular and standardized spelling.<br>
+$1 Titles of other works; e.g. "Pamela" when title field contains "By the author of Pamela." <br>
+$2 Nouns in singular form. Includes such words here as “Mr.,” “Miss,” “Esq.”, “Novel,” etc. <br>
+$3 Adjectives. We include number qualifications here, for example, the word "two" appears if a title has the qualifier “In two volumes."<br>
+$4 Place names<br>
+$5 Personal names<br>
+$6 Verbs in infinitive form [“Write” for “writing”, etc.]<br>
+$7 Material objects. This subfield is primarily for physical/material objects and commodities, for example, "letter." <br>
+$8 Adverbs
 
-- 596: Translation, Abridgment, Adaptation information Claim
-$a type of source claim [“Translation,” “Abridgment”, “Adaptation”, “Revision”]
-$b location of claim
-$c direct source language
-$d indirect source language
-$e transcribe the claim as it appears
-
-
-- 599: Authorship claim (only claims in paratext: for claims in text, make a 500 $a note).
-$a author claim type [“Author (text)”, “Author (paratext)”, “Editor (text)”, “Translator (text),” etc.]
-$b author claim description [“Initials”, “Generic/Descriptive”, “Reference to other works”, “Proper name”]
-$2 author claim transcription
-$3 location of author claim
-$5 author gender claim [“Female,” “Male,” “Indeterminate”]
-$6 actual author gender if known [“Female,” “Male,” “Unknown”]
-$7 notes about author claims by fictional characters, transcriptions of relevant quotations
-
-- 656: Advertisements (create a datafield for each section of ads with a separate heading)
-$a advertisement genre [“Fiction”, “Non-fiction”, “Drama,” “Poetry,” “Periodical,” “Mixed Genre”, “Miscellaneous”]. 
-$b Location of advertisement [“Front,” “Middle,” “Back”].
-$c advertisement’s relation to work [“Same publisher”, “Same genre,” “Same author,” or “No relation”
-$v volume $x notes
-
-- 700: Personal name authorization from VIAF
-$a name
-$d dates of birth and death according to VIAF/worldcat
-$4 relation to work [“Author (text),” “Author (paratext),” “Editor (text),” “Translator (text),” “Translator (paratext),” “Printed for”, “Printed by”, “Sold by”, “Author (epigraph)”, “Inscribed by”, “Author (bookplate),” “Author (source text),” “Author (illustration),” “Dedicatee”]
-$5 authorization [“Authorized”, “Unauthorized”]
-
-- 710: Corporate Name
-$a name of corporation or multiple persons
-$4 relation to work [“Printed for”, “Printed by”]
-$5 authorization [“Authorized”, “Unauthorized”]
-710 ind1="2" ind2=" ": Database 
-$a “Early Novels”
-$5 housing institution [“University of Pennsylvania,” “Library Company,” etc.]
-
-- 989: Enhanced title field keywords 
-$1 titles of other works
-$2 nouns in singular form
-$3 adjectives
-$4 place names
-$5 personal names
-$6 verbs in infinitive form [“Write” for “writing”, etc.]
-$7 material objects
-$8 adverbs
-
-- 999: Signature of END cataloger
-$a cataloger initials: Follow the form XX or XXX, e.g. “MJR”.
-$b date cataloged month/day/2-digit year, e.g. 7/6/11.
-$c cataloger’s home institution, e.g. Swarthmore College
-$d initials of quality control editor
+- 999: Signature of END cataloger<br>
+$a Initials of END cataloger; e.g. “MJR”.<br>
+$b Date cataloged by END as month/day/2-digit year, e.g. 7/6/11.<br>
+$c END cataloger’s home institution, e.g. Swarthmore College<br>
+$d Initials of second checker/proofreader
 
 ***
 
