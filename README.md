@@ -325,6 +325,7 @@ One strength of END is the it gives researchers the ability to delve deeply into
 
 For example, if you are interested in Henry Fielding, you can set up a filter to see just his works in our tabular data. 
 
+![alt text](https://github.com/imbeths/end-dataset/blob/master/ENDFilter.gif "Filters")
 
 From here, it's easier to dig into specific information, such as comparisons in early and later editions of the same work. 
 
