@@ -3,7 +3,7 @@
 [About the Project](#about-the-project)<br>
 [END Custom MARC Schema](#end-custom-marc-schema)<br>
 [Tabular Data](#tabular-data)<br>
-[Sample Visuals](#sample_visuals)
+[Sample Uses](#sample-uses)
 
 #### About the Project
 Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
@@ -17,7 +17,7 @@ The Early Novels Dataset contains bibliographic metadata for eighteenth-century 
 
 The END dataset is comprised of high-quality, human-generated metadata that captures a much fuller range edition- and copy-specific information about early novels than traditional library catalog records. The END metadata schema builds on library-standard MARC records with custom-designed subfields that use both controlled and discursive vocabularies to describe a range of bibliographic features outside the scope of traditional cataloging. These include important bibliographic details such as authority statements, full and half title, accurate and controlled place of publication, and edition statement. They capture both copy-specific information about marginalia, inscriptions, and bookplates as well as title-level data on narrative form. And finally, they record the presence of important paratextual features like authors’ notes, epigraphs, footnotes, and indices, which can be found in many works of early fiction but have never been cataloged in a systematic way that would enable faceted search across a corpus. 
 
-As of late 2016, the Early Novels Dataset numbers 1046 records, which represent all of Penn Libraries’ Collection of British and American Fiction holdings published between 1700-1789. The dataset also includes selected holdings from other Philadelphia-area and regional repositories, including the Library Company of Philadelphia, the Rosenbach, the Swarthmore Libraries Rare Book Room, and Bryn Mawr College Special Collections. These 1046 works of fiction likely represent about 14% of existing titles of fiction in English published during this period. They range from the canonical to the almost-unknown, and while some clearly announce themselves to be “novels,” others are aligned with the wider-ranging genres (romances, fables, adventure stories) that contributed to the rise of the novel.
+As of early 2017, the Early Novels Dataset numbers 1825 records, which represent all of Penn Libraries’ Collection of British and American Fiction holdings published between 1700-1789. The dataset also includes selected holdings from other Philadelphia-area and regional repositories, including the Library Company of Philadelphia, the Rosenbach, the Swarthmore Libraries Rare Book Room, and Bryn Mawr College Special Collections. These 1825 works of fiction likely represent about 14% of existing titles of fiction in English published during this period. They range from the canonical to the almost-unknown, and while some clearly announce themselves to be “novels,” others are aligned with the wider-ranging genres (romances, fables, adventure stories) that contributed to the rise of the novel.
 
 #### Background on the Collection
 Penn Libraries’ Collection of British and American Fiction is comprised of nearly three thousand works of early fiction in English. Its core is the Singer-Mendenhall Collection, built through the combined efforts of a University of Pennsylvania graduate student and professor in the first half of the twentieth century. Godfrey F. Singer and John C. Mendenhall focused their collecting efforts on epistolary fiction, and the Singer-Mendenhall collection today has particular strengths in non-canonical epistolary fiction by female and anonymous authors. 
@@ -32,7 +32,8 @@ The END dataset is also available in json. Tabular subsets are currently in prog
 ****
 
 ## END Custom MARC Schema
-#### 000 Fields - Bibliographic Data (Derived from base catalog records, mostly from Penn Libraries OPAC. Not all END records are built on top of base records, however, so in some END records only the 001 field is present). 
+#### 000 Fields - Bibliographic Data 
+Derived from base catalog records, mostly from Penn Libraries OPAC. Not all END records are built on top of base records, however, so in some END records only the 001 field is present. <br>
 
 - 001: END Control Number: Control numbers in the 001 field follow different systems depending on the year in which the work was cataloged, but all are unique. Each record in the dataset has a unique identifier. 
   - All records cataloged to 2013 have randomly-generated sequential ID numbers in the 001 field. Most from Penn include Franklin BibIDs are included in the 035 field, but many do not include OCLC numbers. These were cataloged from several different institutions: Penn RBML (now Kislak), Swarthmore College, Bryn Mawr, Library Company, etc.
@@ -81,7 +82,6 @@ $x Priority—what entity the title page describes [Work, Volume, Section]<br>
 
 - 246 ind1=0 ind2=7: Running title—appears as two datafields<br>
 $a Transcription of running title in full across verso and recto<br>
-246 Ind1=0 Ind2=7<br>
 $a Running title on verso (verso)<br>
 $a Running title on recto (recto)<br>
 $v Relevant volumes
@@ -97,7 +97,7 @@ $x Transcriptions of edition/revision language in other paratext
 $a City of publication as it appears in the text <br>
 $b Transcription of publisher names and qualifying terms<br>
 $c Date of publication as appears; in roman numerals if applicable<br>
-$c [SECOND SUBFIELD c] date of publication as appears, converted to arabic numerals<br>
+$c [SECOND SUBFIELD c] Date of publication as appears, converted to arabic numerals<br>
 $v Volume(s) <br>
 $x Notes
 
@@ -123,7 +123,7 @@ $x Notes explaining relation between work and collection
 $a Notes that do not fit into other categories, such as bookplates, library marginalia, interesting material characteristics, etc. 
 
 - 520: Paratext<br>
-$a Type of paratext. Standardized terms so far include [About the Author, To the Author, Advertisement [only use if the “Advertisement” is actually a paratextual essay], Afterword,  Apology, Appendix, Character information, Character note, Colophon, Conclusion, Copyright statement, Dedication, Endnotes, Epilogue, Errata, Essay, Footnotes, Glossary, Index, Introduction, Key, Letter, License, List of characters, Memoir, Note, Official note, Poem, Postscript, Preface, Prologue, Review, Subscribers' list, Table of contents, To the Booksellers, To the Reader, To the Reviewer, To the Subscriber, Other]<br>
+$a Type of paratext. Standardized terms so far include [About the Author, To the Author, Advertisement [only used if the “Advertisement” is actually a paratextual essay], Afterword,  Apology, Appendix, Character information, Character note, Colophon, Conclusion, Copyright statement, Dedication, Endnotes, Epilogue, Errata, Essay, Footnotes, Glossary, Index, Introduction, Key, Letter, License, List of characters, Memoir, Note, Official note, Poem, Postscript, Preface, Prologue, Review, Subscribers' list, Table of contents, To the Booksellers, To the Reader, To the Reviewer, To the Subscriber, Other]<br>
 $b Transcription of paratext heading: e.g., “The introduction,” “The editor’s preface,” etc.<br>
 $c Location [“Front,” “Middle”, “Back”]<br>
 $v Volume<br>
@@ -135,13 +135,13 @@ $1 Epigraph source as it appears in the work: e.g., “Odyss.”, “Merchant of
 $2 Epigraph author as it appears in the work: e.g., “Hom.”, “Virg.”, “Shakespear”<br>
 $b Epigraph source if known or discovered<br>
 $c Epigraph author if known or discovered<br>
-$d Translation of the epigraph. If the epigraph is untranslated in the book, catalogers searched for a translation and added an $x that indicates the source of the translation and the language of the original (usually a URL). <br>
+$d Translation of the epigraph. If the epigraph is untranslated in the book, catalogers searched for a translation and added an $x field indicating the source of the translation and the language of the original (usually a URL). <br>
 $v Volume <br>
 $x Notes; include source of translation
 
 - 592: Narrative form<br>
 One of the few fields that refers to the text itself rather than the paratext, this field records the narrative form of the work, based on a quick scan of the text.<br>
-$a Primary narrative form [“Epistolary”, “First-person,” “Third-person,” “Dramatic dialogue.”<br>
+$a Primary narrative form [“Epistolary”, “First-person,” “Third-person,” “Dramatic dialogue”]<br>
 $b Additional narrative forms that appear in the text, with same controlled terms as $a. <br>
 $c Non-prose forms [“Poems,” “Sheet music,” "Theatrical dialogue"]<br>
 $d Oddities. This field is for anything we found remarkably strange regarding the narrative form.
@@ -228,14 +228,18 @@ $d Initials of second checker/proofreader
 
 ### Tabular Data
 
+The Early Novels Database includes many fields which do not translate easily into a tabular form. (For example, we record titles for each volume, which means that we can't offer a single "title" field with one entry.) The most complete way to work with the data is through the XML or JSON files.
+
+We plan, however, to provide structured tabular data for easier exploration and use. This will be provided in several different forms:
+
 1. Most minimal version: titles (first full 246), authors, and dates 
 2. Fullest version (below)
 
-- Catalog title [field name?]:
-Concatenate (single field) catalog title, catalog subtitle, catalog statement of responsibility (245 a, 245 b, 245 c)
+- Catalog title:
+Concatenated (single field) catalog title, catalog subtitle, and catalog statement of responsibility (245 a, 245 b, 245 c).
 
 - Full title: 
-First 246a where 246g=”full[c]”
+First 246a where 246g="full[c]”
 
 - Half title: 
 First 246a where 246g=”half” if exists 
@@ -255,15 +259,15 @@ First 246a where 246g=”half” if exists
 
 - Publisher
 710$$ where value = “printed for” 
-If no 710, use 700$4 where value = “printed for”
+If no 710, we use 700$4 where value = “printed for”
 
 - Printer
 710$4 where value = “printed by” 
-If no 710, use 700$4 where value = “printed by”
+If no 710, we use 700$4 where value = “printed by”
 
 - Bookseller 
 710$4 where value = “sold by” 
-If not 710, 700$4 where value = “sold by” 
+If no 710, we use 700$4 where value = “sold by” 
 
 - Date of publication 
 008=[bytes 7-10]: Master Pub Date [LINK TO EXPLANATION IN SCHEMA BELOW]
@@ -272,25 +276,25 @@ If not 710, 700$4 where value = “sold by”
 
 - Place of publication 
 260 $a city of publication as it appears in the text 
-[if multiple volumes, use volume 1][additional places of publication may exists if multiple volumes]
+[if multiple volumes, we use volume 1][additional places of publication may exists if multiple volumes]
 
 - Publisher name transcription from title page 
 260 $b transcription of publisher names and qualifying terms
 
 - Date of publication on title page
 260 $c date of publication as appears; in roman numerals if applicable [grab FIRST subfield c]
-[if multiple volumes, use volume 1][additional places of publication may exists if multiple volumes]
+[if multiple volumes, we use volume 1][additional places of publication may exists if multiple volumes]
 
 - cataloger notes on publication and distribution 
 260 $x notes
-[if multiple volumes, use volume 1]
+[if multiple volumes, we use volume 1]
 
 Format
 - 300$x [Controlled terms]
 
 Number of volumes: 
 $a
-[If there is a "v" in 200$a field, grab integer before it. If no "v," work is 1 vol.]
+[If there is a "v" in 200$a field, we grab the integer before it. If no "v," work is 1 vol.]
 
 Illustrations: 
 $b illustrations [“Ill.”, “Ill. (frontispiece),” “Col. Ill.”, “Port.”, “Map”] 
@@ -300,9 +304,8 @@ Title of series or collection:
 -490: Ind1=0 Collection  $a title of collection
 
 General cataloger notes: 
-500: General notes—new datafield for each note
-$a Notes that do not fit into other categories, such as bookplates, library marginalia, interesting material characteristics, etc. 
-[concatinate all $500a notes - there may be multiple - into a single field]
+500 $a: General notes
+We concatenate all $500a notes - there are often multiples - into a single field.
 
 Paratexts
 520: Paratext-new datafield for each paratext
@@ -314,7 +317,16 @@ $x notes; transcribe interesting quotations and first line of paratext.
 
 ****
 
-### Sample Visuals
+### Sample Uses
+The complex, copy-specific nature of the data is designed for thoroughness rather than for quick analysis. We've provided some sample applications and uses for the data, and look forward to continuing to explore and hear more applications.
+
+1. Copy-Specific Information
+One strength of END is the it gives researchers the ability to delve deeply into a particular copy or author. Are you interested in who published Henry Fielding? Try setting up a filter to just see one author. 
+
+2. Comparative Information
+Pivot tables, which can be created quickly in Microsoft Excel or Google Sheets, should allow for comparison, though the data may need to be cleaned and organized first (we recommend <a href="http://openrefine.org/">OpenRefine</a>). 
+
+Here, we crunch some data, just based on the 999 fields of our cataloger's signature, to examine who contributed to END as of January 2017.
 
 Schools over time: shows how END project has expanded to different institutions.
 <br>
