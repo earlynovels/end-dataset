@@ -23,7 +23,7 @@ The END dataset is also available in json. Tabular subsets are currently in prog
 ****
 
 ## END Custom MARC Schema
-0xx Fields: (Derived from base catalog records, mostly from Penn Libraries OPAC. Not all END records are built on top of base records, however, so in some END records only the 001 field is present). 
+000 Fields - Bibliographic Data (Derived from base catalog records, mostly from Penn Libraries OPAC. Not all END records are built on top of base records, however, so in some END records only the 001 field is present). 
 
 - 001: END Control Number: Control numbers in the 001 field follow different systems depending on the year in which the work was cataloged, but all are unique. Each record in the dataset has a unique identifier. 
   - All records cataloged to 2013 have randomly-generated sequential ID numbers in the 001 field. Most from Penn include Franklin BibIDs are included in the 035 field, but many do not include OCLC numbers. These were cataloged from several different institutions: Penn RBML (now Kislak), Swarthmore College, Bryn Mawr, Library Company, etc.
@@ -49,14 +49,14 @@ $h language of the original text (if translated)
 - 043: Geographic area code
 - 090: Locally-assigned call number[f] (Obsolete--not part of standard MARC 21 Bibliographic format)
 
-1xx Fields (Derived from base catalog records)
+100 Fields - Standardized author/title information (Derived from base catalog records)
 - 100: Author name
 $a Last Name, First Name
 $c Title (EX: Sir, Dr., etc)
 $d dates of birth and death
 - 130: Uniform Title
 
-2xx Fields (Derived from base catalog records)
+200 Fields - Title Data (Derived from base catalog records)
 - 245: Title as cataloged <br>
 $a Title <br>
 $b Subtitle<br>
@@ -96,6 +96,7 @@ $x Notes
 $b Transcription of the printer information if it is in a different location from the publisher information<br>
 $f Printer name(s)
 
+300 Fields - Physical Information
 - 300: Physical bibliographic features<br>
 $a Extent—the number of pages or volumes<br>
 $b Illustrations, if any included in work [“Ill.”, “Ill. (frontispiece),” “Col. Ill.”, “Port.”, “Map”]. Descriptions appear in 500 "General Notes" field. <br>
@@ -103,10 +104,12 @@ $c Dimensions<br>
 $x Format, controlled term [“Folio,” “Duodecimo,” etc.]<br>
 $z Work qualifiers such as “In two volumes,” “in five parts” 
 
+400 Fields - Collections
 - 490: Ind1=0 Collections (Published Collection, as in “Collected works of ---” or the like, not the library collection.) <br>
 $a Title of collection<br>
 $x Notes explaining relation between work and collection
 
+500 Fields - Added fields, interpretive and analytic metadata, copy-specific metadata
 - 500: General notes—new datafield for each note<br>
 $a Notes that do not fit into other categories, such as bookplates, library marginalia, interesting material characteristics, etc. 
 
@@ -168,6 +171,7 @@ $5 Author gender claim [“Female,” “Male,” “Indeterminate”]<br>
 $6 Actual author gender if known [“Female,” “Male,” “Unknown”]<br>
 $7 Notes about author claims by fictional characters, transcriptions of relevant quotations
 
+600 Fields - Advertisements
 - 656: Advertisements<br>
 This field is for parts of the text that explicitly advertise other works or services.<br>
 $a Genre of the works being advertised [“Fiction”, “Non-fiction”, “Drama,” “Poetry,” “Periodical,” “Mixed Genre”, “Miscellaneous”]. <br>
@@ -176,6 +180,7 @@ $c Advertisement’s relation to work. This subfield describes why these works a
 $v Volume this section appears in <br>
 $x Notes
 
+700 Fields - Names
 - 700: Personal name authorization from VIAF <br>
 We created separate 700 fields for each nonfictional person identified in the text, and authorized them whenever possible in the <a href="http://viaf.org/">VIAF (Virtual Identity Authority File)</a>.<br>
 $a Name <br>
@@ -192,6 +197,7 @@ $5 Authorization [“Authorized”, “Unauthorized”] <br>
 $a “Early Novels” <br>
 $5 Housing institution [“University of Pennsylvania,” “Library Company,” etc.]
 
+900 Fields - Local Information
 - 989: Enhanced title field keywords <br>
 This field standardizes and lemmatizes words in the title field. Repeated words are only listed once; irregular spellings are included in both the irregular and standardized spelling.<br>
 $1 Titles of other works; e.g. "Pamela" when title field contains "By the author of Pamela." <br>
