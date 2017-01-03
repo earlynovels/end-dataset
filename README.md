@@ -2,7 +2,8 @@
 
 [About the Project](#about-the-project)<br>
 [END Custom MARC Schema](#end-custom-marc-schema)<br>
-[Tabular Data](#tabular-data)
+[Tabular Data](#tabular-data)<br>
+[Sample Visuals](#sample_visuals)
 
 #### About the Project
 Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
@@ -309,3 +310,25 @@ $a type of paratext, controlled
 $b transcribed paratext heading (from all volumes)
 $v volume
 $x notes; transcribe interesting quotations and first line of paratext.
+
+
+****
+
+### Sample Visuals
+
+Schools over time: shows how END project has expanded to different institutions.
+<br>
+<img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Schools%20Over%20Time.png" alt="Schools over time: shows how END project has expanded to different institutions." width="500">
+<br>
+
+
+Catalogers by institution: shows different institutions involved.
+<br>
+<img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Catalogers%20by%20Institution.png" alt="Catalogers by institution: shows different institutions involved." width="500">
+<br>
+
+
+Catalogers by initial: it takes a lot of people to make a database!
+<br>
+<img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Catalogers%20by%20Initials.png" alt="Catalogers by initial: it takes a lot of people to make a database!" width="500">
+<br>
