@@ -317,36 +317,47 @@ $x notes; transcribe interesting quotations and first line of paratext.
 
 ****
 
-### Sample Uses
-The complex, copy-specific nature of the data is designed for thoroughness rather than for quick analysis. We've provided some sample applications and uses for the data, and look forward to continuing to explore and hear more applications.
+## Sample Uses
+The complex, copy-specific nature of the data is designed for thoroughness rather than for quick analysis. In this section, we briefly consider a few way sample applications and uses for the data. We look forward to continuing to explore and hear how people use this data.
 
-1. Copy-Specific Information
-One strength of END is the it gives researchers the ability to delve deeply into a particular text, volume, or author. 
+### 1. Copy-Specific Information
+One strength of END is the it gives researchers the ability to delve deeply into a particular text, volume, or author. For example, if you are interested in Henry Fielding, you can set up a filter to see just his works in our tabular data. From here, it's easier to dig into specific information, such as comparisons in early and later editions of the same work, or between British and American editions.
 
-For example, if you are interested in Henry Fielding, you can set up a filter to see just his works in our tabular data. 
+The following shows how to set up a filter in two variables. (We use Excel here, but this will also work in Google Sheets, etc.) 
 
 ![Shows using a filter on two variables in Excel](https://github.com/imbeths/end-dataset/blob/master/END%20Filter%20Demo%203.gif "Filters Demo")
 
-From here, it's easier to dig into specific information, such as comparisons in early and later editions of the same work. 
 
-2. Comparative Information
-Pivot tables, which can be created quickly in Microsoft Excel or Google Sheets, should allow for comparison, though the data may need to be cleaned and organized first (we recommend <a href="http://openrefine.org/">OpenRefine</a>). 
+### 2. Comparative Information
+Pivot tables, which can be created quickly in Microsoft Excel or Google Sheets, allow you to compare multiple variables. Please note that depending on the field and your question, the data may need to be cleaned and organized first (we recommend <a href="http://openrefine.org/">OpenRefine</a>). 
 
-Here, we crunch some data, just based on the 999 fields of our cataloger's signature, to examine who contributed to END as of January 2017.
+Here, we imagine that the scholar is interested in seeing details of how the database was created, recording in the 999 fields. 
 
-Schools over time: shows how END project has expanded to different institutions.
+First, we highlight the information that interests us, and create the pivot table. 
+
+![Show how to create a pivot table](https://github.com/imbeths/end-dataset/blob/master/END%20Create%20Pivot.gif "Pivot Table Create Demo")
+
+Next, we add the data to different fields to compare information, and to create a chart. (Note that this data was cleaned before attempting a pivot table.)
+
+![Show how to go from pivot table to chart](https://github.com/imbeths/end-dataset/blob/master/END%20Pivot%20to%20Chart.gif "Pivot Table to Chart Demo")
+
+With the pivot table, we're able to create a couple of different types of visuals by manipulating the variables in different columns. 
+
+For example, we examine dates vs. schools (drag 999$b to "rows" and 999$c to "columns" and "values") to create the following visual on the institutional affiliation of our catalogers. In this, you can see that the END project has recently expanded to a broader set of institutions.
 <br>
 <img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Schools%20Over%20Time.png" alt="Schools over time: shows how END project has expanded to different institutions." width="500">
 <br>
 
 
-Catalogers by institution: shows different institutions involved.
+Next, we examined catalogers vs. schools (999$c to "rows" and "values") to show how many catalog records we have from each of our different institutions. NYU is new to the project, but has already added a significant number of records, for example. 
 <br>
 <img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Catalogers%20by%20Institution.png" alt="Catalogers by institution: shows different institutions involved." width="500">
 <br>
 
 
-Catalogers by initial: it takes a lot of people to make a database!
+Finally, we chart our individual catalogers, who all sign by initial, to see which people are the most frequent contributers to the database (999$d to "rows" and "values"). The main takeaway: this database is a deeply collaborative effort.
 <br>
 <img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Catalogers%20by%20Initials.png" alt="Catalogers by initial: it takes a lot of people to make a database!" width="500">
 <br>
+
+Enjoy exploring!
