@@ -2,14 +2,13 @@
 
 [About the Project](#about-the-project)<br>
 [END Custom MARC Schema](#end-custom-marc-schema)<br>
-[Tabular Data](#tabular-data)<br>
 [Tutorial and Visualization Demos](#tutorial-and-visualization-demos)
 
 #### About the Project
 Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
 
 <br>
-<img src="https://github.com/imbeths/end-dataset/blob/master/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name." width="500">
+<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name." width="500">
 <br>
 
 #### About the Dataset
@@ -224,96 +223,6 @@ $b Date cataloged by END as month/day/2-digit year, e.g. 7/6/11.<br>
 $c END cataloger’s home institution, e.g. Swarthmore College<br>
 $d Initials of second checker/proofreader
 
-***
-
-### Tabular Data
-
-The Early Novels Database includes many fields which do not translate easily into a tabular form. (For example, we record titles for each volume, which means that we can't offer a single "title" field with one entry.) The most complete way to work with the data is through the XML or JSON files.
-
-We plan, however, to provide structured tabular data for easier exploration and use. This will be provided in several different forms:
-
-1. Most minimal version: titles (first full 246), authors, and dates 
-2. Fullest version (below)
-
-- Catalog title:
-Concatenated (single field) catalog title, catalog subtitle, and catalog statement of responsibility (245 a, 245 b, 245 c).
-
-- Full title: 
-First 246a where 246g="full[c]”
-
-- Half title: 
-First 246a where 246g=”half” if exists 
-
-[- Running titles - first 246a where 246g=”running title” OR “running title verso” or “running title recto”?]
-
-- Number of volumes: Last integer in 246$v is number of volumes. If no integer in field, number of volumes = 1. 
-
-- Edition statement from title page
-250$a: transcription of full edition statement
-
-- Controlled edition statement 
-250$b controlled version of transcribed edition statement [“First edition,” “Second edition,” etc.]
-
-- City of publication 
-260$a
-
-- Publisher
-710$$ where value = “printed for” 
-If no 710, we use 700$4 where value = “printed for”
-
-- Printer
-710$4 where value = “printed by” 
-If no 710, we use 700$4 where value = “printed by”
-
-- Bookseller 
-710$4 where value = “sold by” 
-If no 710, we use 700$4 where value = “sold by” 
-
-- Date of publication 
-008=[bytes 7-10]: Master Pub Date [LINK TO EXPLANATION IN SCHEMA BELOW]
-
-260: Publication and distribution
-
-- Place of publication 
-260 $a city of publication as it appears in the text 
-[if multiple volumes, we use volume 1][additional places of publication may exists if multiple volumes]
-
-- Publisher name transcription from title page 
-260 $b transcription of publisher names and qualifying terms
-
-- Date of publication on title page
-260 $c date of publication as appears; in roman numerals if applicable [grab FIRST subfield c]
-[if multiple volumes, we use volume 1][additional places of publication may exists if multiple volumes]
-
-- cataloger notes on publication and distribution 
-260 $x notes
-[if multiple volumes, we use volume 1]
-
-Format
-- 300$x [Controlled terms]
-
-Number of volumes: 
-$a
-[If there is a "v" in 200$a field, we grab the integer before it. If no "v," work is 1 vol.]
-
-Illustrations: 
-$b illustrations [“Ill.”, “Ill. (frontispiece),” “Col. Ill.”, “Port.”, “Map”] 
-[add note: not standardized  - populated field = presence] 
-
-Title of series or collection:
--490: Ind1=0 Collection  $a title of collection
-
-General cataloger notes: 
-500 $a: General notes
-We concatenate all $500a notes - there are often multiples - into a single field.
-
-Paratexts
-520: Paratext-new datafield for each paratext
-$a type of paratext, controlled
-$b transcribed paratext heading (from all volumes)
-$v volume
-$x notes; transcribe interesting quotations and first line of paratext.
-
 
 ****
 
@@ -325,7 +234,7 @@ One strength of END is the it gives researchers the ability to delve deeply into
 
 The following shows how to set up a filter in two variables. (We use Excel here, but this will also work in Google Sheets, etc.) 
 
-![Shows using a filter on two variables in Excel](https://github.com/imbeths/end-dataset/blob/master/END%20Filter%20Demo%203.gif "Filters Demo")
+![Shows using a filter on two variables in Excel](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Filter%20Demo%203.gif "Filters Demo")
 
 
 ### 2. Comparative Information
@@ -335,29 +244,29 @@ Here, we imagine that the scholar is interested in seeing details of how the dat
 
 First, we highlight the information that interests us, and create the pivot table. 
 
-![Show how to create a pivot table](https://github.com/imbeths/end-dataset/blob/master/END%20Create%20Pivot.gif "Pivot Table Create Demo")
+![Show how to create a pivot table](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Create%20Pivot.gif "Pivot Table Create Demo")
 
 Next, we add the data to different fields to compare information, and then we create a chart. 
 
-![Show how to go from pivot table to chart](https://github.com/imbeths/end-dataset/blob/master/END%20Pivot%20to%20Chart.gif "Pivot Table to Chart Demo")
+![Show how to go from pivot table to chart](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Pivot%20to%20Chart.gif "Pivot Table to Chart Demo")
 
 With the pivot table, we're able to create a couple of different types of visuals by manipulating the variables in different columns. 
 
 For example, we examine dates vs. schools (drag 999$b to "rows" and 999$c to "columns" and "values") to create the following visual on the institutional affiliation of our catalogers. In this, you can see that the END project has recently expanded to a broader set of institutions.
 <br>
-<img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Schools%20Over%20Time.png" alt="Schools over time: shows how END project has expanded to different institutions." width="500">
+<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Pic%20Schools%20Over%20Time.png" alt="Schools over time: shows how END project has expanded to different institutions." width="500">
 <br>
 
 
 Next, we examined catalogers vs. schools (999$c to "rows" and "values") to show how many catalog records we have from each of our different institutions. NYU is new to the project, but has already added a significant number of records, for example. 
 <br>
-<img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Catalogers%20by%20Institution.png" alt="Catalogers by institution: shows different institutions involved." width="500">
+<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Pic%20Catalogers%20by%20Institution.png" alt="Catalogers by institution: shows different institutions involved." width="500">
 <br>
 
 
 Finally, we chart our individual catalogers, who all sign by initial, to see which people are the most frequent contributers to the database (999$d to "rows" and "values"). The main takeaway: this database is a deeply collaborative effort.
 <br>
-<img src="https://github.com/imbeths/end-dataset/blob/master/END%20Pic%20Catalogers%20by%20Initials.png" alt="Catalogers by initial: it takes a lot of people to make a database!" width="500">
+<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Pic%20Catalogers%20by%20Initials.png" alt="Catalogers by initial: it takes a lot of people to make a database!" width="500">
 <br>
 
 Enjoy exploring!
