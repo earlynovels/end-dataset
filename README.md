@@ -8,7 +8,7 @@
 Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
 
 <br>
-<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name." width="500">
+<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name, such as title, illustration, etc." width="500">
 <br>
 
 #### About the Dataset
@@ -234,7 +234,7 @@ One strength of END is the it gives researchers the ability to delve deeply into
 
 The following shows how to set up a filter in two variables. (We use Excel here, but this will also work in Google Sheets, etc.) 
 
-![Shows using a filter on two variables in Excel](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Filter%20Demo%203.gif "Filters Demo")
+![Shows using a filter on two variables in Excel. Click on "filter," choose variables at the top of the columnns.](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Filter%20Demo%203.gif "Filters Demo")
 
 
 ### 2. Comparative Information
@@ -244,11 +244,11 @@ Here, we imagine that the scholar is interested in seeing details of how the dat
 
 First, we highlight the information that interests us, and create the pivot table. 
 
-![Show how to create a pivot table](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Create%20Pivot.gif "Pivot Table Create Demo")
+![Show how to create a pivot table. Highlight columns, right click, "Insert pivot table," add new sheet.](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Create%20Pivot.gif "Pivot Table Create Demo")
 
 Next, we add the data to different fields to compare information, and then we create a chart. 
 
-![Show how to go from pivot table to chart](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Pivot%20to%20Chart.gif "Pivot Table to Chart Demo")
+![Show how to go from pivot table to chart. Pick rows and values, then click in table, Insert -> chart. (Pie chart in demo.)](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Pivot%20to%20Chart.gif "Pivot Table to Chart Demo")
 
 With the pivot table, we're able to create a couple of different types of visuals by manipulating the variables in different columns. 
 
