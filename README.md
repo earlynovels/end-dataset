@@ -331,13 +331,13 @@ The following shows how to set up a filter in two variables. (We use Excel here,
 ### 2. Comparative Information
 Pivot tables, which can be created quickly in Microsoft Excel or Google Sheets, allow you to compare multiple variables. Please note that depending on the field and your question, the data may need to be cleaned and organized first (we recommend <a href="http://openrefine.org/">OpenRefine</a>). 
 
-Here, we imagine that the scholar is interested in seeing details of how the database was created, recording in the 999 fields. 
+Here, we imagine that the scholar is interested in seeing details of how the database was created, recorded in our 999 fields. 
 
 First, we highlight the information that interests us, and create the pivot table. 
 
 ![Show how to create a pivot table](https://github.com/imbeths/end-dataset/blob/master/END%20Create%20Pivot.gif "Pivot Table Create Demo")
 
-Next, we add the data to different fields to compare information, and to create a chart. (Note that this data was cleaned before attempting a pivot table.)
+Next, we add the data to different fields to compare information, and then we create a chart. 
 
 ![Show how to go from pivot table to chart](https://github.com/imbeths/end-dataset/blob/master/END%20Pivot%20to%20Chart.gif "Pivot Table to Chart Demo")
 
