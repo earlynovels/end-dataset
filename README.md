@@ -3,7 +3,7 @@
 [About the Project](#about-the-project)<br>
 [END Custom MARC Schema](#end-custom-marc-schema)<br>
 [Tabular Data](#tabular-data)<br>
-[Sample Uses](#sample-uses)
+[Tutorial and Visualization Demos](#tutorial-and-visualization-demos)
 
 #### About the Project
 Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
@@ -317,7 +317,7 @@ $x notes; transcribe interesting quotations and first line of paratext.
 
 ****
 
-## Sample Uses
+## Tutorial and Visualization Demos
 The complex, copy-specific nature of the data is designed for thoroughness rather than for quick analysis. In this section, we briefly consider a few way sample applications and uses for the data. We look forward to continuing to explore and hear how people use this data.
 
 ### 1. Copy-Specific Information
