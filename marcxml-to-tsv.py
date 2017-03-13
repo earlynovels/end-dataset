@@ -197,13 +197,14 @@ def get_persons(relator,record):
 
     corp_names = record.get_fields('710')
     for name in corp_names:
-        if name['a'] and name['4'] and relator in name['4'].lower():
+        if name['a'] and name['4'] and relator.lower() in name['4'].lower():
             persons.append(name['a'])
-    if not persons:
-        pers_names = record.get_fields('700')
+
+    pers_names = record.get_fields('700')
         for name in pers_names:
-            if name['a'] and name['4'] and relator in name['4'].lower():
+            if name['a'] and name['4'] and relator.lower() in name['4'].lower():
                 persons.append(name['a'])
+
     return ' | '.join(persons)
 
 def get_paratext(para_type,record):

@@ -43,7 +43,17 @@ def main(filename):
         p1 = re.compile("^(\d+)\s?v\.?.*")
         p2 = re.compile(".*v\.?\s?(\d+)[\s.:;]?")
 
-        if record['300'] and record['300']['a']:
+        if record['710'] and record['710']['a']:
+            line_out += "\t"
+            line_out += record['710']['a']
+            line_out += "\t"
+
+        if record['710'] and record['710']['4']:
+            if record['710']['4'] == 'Printed for':
+                line_out += record['710']['4']
+            print(line_out)
+
+        # if record['300'] and record['300']['a']:
 
             # line_out += "\t"
             # line_out += str(len(record.get_fields('300')))
@@ -52,21 +62,21 @@ def main(filename):
 
             # for field in record.get_fields('300'):
 
-            curr_subfields = record['300'].get_subfields('a')
-            for subfield in curr_subfields:
-                vol += " " + subfield
-            vol = vol.lstrip()
+            # curr_subfields = record['300'].get_subfields('a')
+            # for subfield in curr_subfields:
+            #     vol += " " + subfield
+            # vol = vol.lstrip()
 
-            if p1.match(vol):
-                vol = p1.match(vol).groups()[0]
-                line_out += "\t p1:"
-                line_out += vol
-                print(line_out)
-            elif p2.match(vol):
-                vol = p2.match(vol).groups()[0]
-                line_out += "\t p2:"
-                line_out += vol
-                print(line_out)
+            # if p1.match(vol):
+            #     vol = p1.match(vol).groups()[0]
+            #     line_out += "\t p1:"
+            #     line_out += vol
+            #     print(line_out)
+            # elif p2.match(vol):
+            #     vol = p2.match(vol).groups()[0]
+            #     line_out += "\t p2:"
+            #     line_out += vol
+            #     print(line_out)
 
             # else:
             #     vol = '1'
