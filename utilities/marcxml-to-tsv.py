@@ -21,53 +21,52 @@ TODO:
 
 COLUMNS = [
         "id",
-        "orig language (base)",
-        "author name",
-        "author dates",
-        "author transcribed",
-        "title catalog",
-        "title full",
-        "title half",
-        "title series",
-        "vols",
+        # "orig language (base)",
+        # "author name",
+        # "author dates",
+        # "author transcribed",
+        # "title catalog",
+        # "title full",
+        # "title half",
+        # "title series",
         # "246$v vols",
         # "300$a vols",
-        # "300$a",
-        "edition trans",
-        "pub date",
-        "pub date transcribed",
-        "pub location",
-        "pub",
-        "pub transcribed",
-        "printer",
-        "bookseller",
-        "pub notes",
-        "format",
-        "illustrations",
-        "pub cataloger notes",
-        "para:preface",
-        "para:dedication",
-        "para:advertisement",
-        "para:to the reader",
-        "para:intro",
-        "para:note",
-        "para:other",
-        "para:footnotes",
-        "epigraph source transcribed",
-        "narrative form primary",
-        "narrative form secondary",
-        "subscriber list",
-        "inscription",
-        "marginalia",
-        "author claim",
-        "author claim type",
-        "author gender claim",
-        "author gender",
-        "advertisement genres",
-        "title words:other works",
-        "title words:singular nouns",
-        "title words:place names",
-        "holding institution"
+        "300$a",
+        # "edition trans",
+        # "pub date",
+        # "pub date transcribed",
+        # "pub location",
+        # "pub",
+        # "pub transcribed",
+        # "printer",
+        # "bookseller",
+        # "pub notes",
+        # "format",
+        # "illustrations",
+        # "pub cataloger notes",
+        # "para:preface",
+        # "para:dedication",
+        # "para:advertisement",
+        # "para:to the reader",
+        # "para:intro",
+        # "para:note",
+        # "para:other",
+        # "para:footnotes",
+        # "epigraph source transcribed",
+        # "narrative form primary",
+        # "narrative form secondary",
+        # "subscriber list",
+        # "inscription",
+        # "marginalia",
+        # "author claim",
+        # "author claim type",
+        # "author gender claim",
+        # "author gender",
+        # "advertisement genres",
+        # "title words:other works",
+        # "title words:singular nouns",
+        # "title words:place names",
+        # "holding institution"
         ]
 
 PARA_TYPES = [
@@ -90,33 +89,21 @@ def get_pymarc_field_value(tag,record):
     if record[tag]: return record[tag].format_field()
     else: return ""
 
-def get_pymarc_subfield_value(tag,code,record):
+def get_pymarc_subfield_value(tag,subfield,record):
     """default function for returning string of marc field value"""
     
-    if record[tag] and record[tag][code]: return record[tag][code]
+    if record[tag] and record[tag][subfield]: return record[tag][subfield]
     else: return ""
 
-def get_concatenated_subfield_values(tag,code,record):
+def get_concatenated_subfield_values(tag,subfield,record):
     """default function for returning a concatenated string of subfield values"""
 
     values = []
     fields = record.get_fields(tag)
     if fields:
         for field in fields:
-            for subfield in field.get_subfields(code):
-                values.append(subfield)
+            if field[subfield]: values.append(field[subfield])
     return ' | '.join(values)
-
-def get_list_subfield_values(tag,code,record):
-    """default function for returning a concatenated string of subfield values"""
-
-    values = []
-    fields = record.get_fields(tag)
-    if fields:
-        for field in fields:
-            for subfield in field.get_subfields(code):
-                values.append(subfield)
-    return values
 
 """Specific functions for particular fields"""
 
@@ -158,19 +145,6 @@ def get_title_half(record):
                 return field['a']
     else: return ""
 
-def get_vols(record):
-    """return number of volumes based on END modified 300$a field"""
-
-    subfields = get_list_subfield_values('300','a',record)
-    p1 = re.compile('\[(\d+) v\.\]')
-
-    for subfield in subfields:
-
-        result = p1.match(subfield)
-        if result: return result.groups()[0]
-
-    return ""
-
 def get_vols_from_246(record):
     """return number of volumes based on highest 'v' subfield across 246"""
     fields = record.get_fields('246')
@@ -197,27 +171,24 @@ def get_vols_from_300(record):
 
     ## following patterns catch almost all vol references in 300$a (942 records)
 
-    p1 = re.compile("(\d+)\s?v\.?")
-    p2 = re.compile("v\.?\s?(\d+)")
+    p1 = re.compile("^(\d+)\s?v\.?.*")
+    p2 = re.compile(".*v\.?\s?(\d+)[\s.:;]?")
 
-    vol_a = get_concatenated_subfield_values('300','a',record)
-    vol_v = get_concatenated_subfield_values('300','v',record)
+    if record['300'] and record['300']['a']:
 
-    vol = vol_a + ' | ' + vol_v if vol_v else vol_a
+        vol = ""
+        curr_subfields = record['300'].get_subfields('a')
+        for subfield in curr_subfields:
+            vol += " " + subfield
+        vol = vol.lstrip()
 
-    def get_max(list):
-        values = []
-        for item in list: values.append(int(item))
-        return max(values)
-
-    if vol:
-        if p1.search(vol):
-            vol = get_max(p1.findall(vol))
-        elif p2.search(vol):
-            vol = get_max(p2.findall(vol))
-        else: vol = '1'
+        if p1.match(record['300']['a']):
+            vol = p1.match(record['300']['a']).groups()[0]
+        elif p2.match(record['300']['a']):
+            vol = p2.match(record['300']['a']).groups()[0]
         return vol
     else: return ""
+
 
 def get_persons(relator,record):
     """return concatenated string of persons based on relator subfield / 710$a or 700$a"""
@@ -226,13 +197,14 @@ def get_persons(relator,record):
 
     corp_names = record.get_fields('710')
     for name in corp_names:
-        if name['a'] and name['4'] and relator in name['4'].lower():
+        if name['a'] and name['4'] and relator.lower() in name['4'].lower():
             persons.append(name['a'])
-    if not persons:
-        pers_names = record.get_fields('700')
+
+    pers_names = record.get_fields('700')
         for name in pers_names:
-            if name['a'] and name['4'] and relator in name['4'].lower():
+            if name['a'] and name['4'] and relator.lower() in name['4'].lower():
                 persons.append(name['a'])
+
     return ' | '.join(persons)
 
 def get_paratext(para_type,record):
@@ -278,77 +250,59 @@ def get_out_filename(filename):
 
 # * * * * * * * * * * * * * * * * * *
 
-class switch(object):
-    def __init__(self, value):
-        self.value = value
-        self.fall = False
-
-    def __iter__(self):
-        """Return the match method once, then stop"""
-        yield self.match
-        raise StopIteration
-    
-    def match(self, *args):
-        """Indicate whether or not to enter a case suite"""
-        if self.fall or not args:
-            return True
-        elif self.value in args: # changed for v1.5, see below
-            self.fall = True
-            return True
-        else:
-            return False
-
 def get_value(col_name,record):
 
-    for case in switch(col_name):
-        if case("id"): return get_pymarc_field_value('001',record)
-        if case("orig language (base)"): return get_original_language(record)
-        if case("author name"): return get_pymarc_subfield_value('100','a',record)
-        if case("author dates"): return get_pymarc_subfield_value('100','d',record)
-        if case("author transcribed"): return get_pymarc_subfield_value('245','c',record)
-        if case("title catalog"): return get_pymarc_field_value('245',record)
-        if case("title full"): return get_title_full(record)
-        if case("title half"): return get_title_half(record)
-        if case("title series"): return get_pymarc_subfield_value('490','a',record)
-        if case("vols"): return get_vols(record)
-        if case("246$v vols"): return get_vols_from_246(record)
-        if case("300$a vols"): return get_vols_from_300(record)
-        if case("300$a"): return get_concatenated_subfield_values('300','a',record)
-        if case("edition trans"): return get_pymarc_subfield_value('250','a',record)
-        if case("pub date"): return get_pymarc_field_value('008',record)[7:11]
-        if case("pub date transcribed"): return get_pymarc_subfield_value('260','c',record)
-        if case("pub location"): return get_pymarc_subfield_value('260','a',record)
-        if case("pub"): return get_persons("Printed for",record)
-        if case("pub transcribed"): return get_pymarc_subfield_value('260','b',record)
-        if case("printer"): return get_persons("Printed by",record)
-        if case("bookseller"): return get_persons("Sold by",record)
-        if case("pub notes"): return get_pymarc_subfield_value('260','x',record)
-        if case("format"): return get_pymarc_subfield_value('300','x',record)
-        if case("illustrations"): return get_pymarc_subfield_value('300','b',record)
-        if case("pub cataloger notes"): return get_concatenated_subfield_values('500','a',record)
-        if case("para:preface"): return get_paratext(PARA_TYPES[0],record)
-        if case("para:dedication"): return get_paratext(PARA_TYPES[1],record)
-        if case("para:advertisement"): return get_paratext(PARA_TYPES[2],record)
-        if case("para:to the reader"): return get_paratext(PARA_TYPES[3],record)
-        if case("para:intro"): return get_paratext(PARA_TYPES[4],record)
-        if case("para:notes"): return get_paratext(PARA_TYPES[5],record)
-        if case("para:footnotes"): return get_paratext(PARA_TYPES[6],record)
-        if case("para:other"): return get_paratext('other',record)
-        if case("epigraph source transcribed"): return get_epigraph_source_transcribed(record)
-        if case("narrative form primary"): return get_concatenated_subfield_values('592','a',record)
-        if case("narrative form secondary"): return get_concatenated_subfield_values('592','b',record)
-        if case("subscriber list"): return 'true' if record.get_fields('593') else ''
-        if case("inscription"): return 'true' if record.get_fields('594') else ''
-        if case("marginalia"): return 'true' if record.get_fields('595') else ''
-        if case("author claim"): return get_pymarc_subfield_value('599','a',record)
-        if case("author claim type"): return get_pymarc_subfield_value('599','b',record)
-        if case("author gender claim"): return get_pymarc_subfield_value('599','5',record)
-        if case("author gender"): return get_pymarc_subfield_value('599','6',record)
-        if case("advertisement genres"): return get_concatenated_subfield_values('656','a',record)
-        if case("title words:other works"): return get_concatenated_subfield_values('989','1',record)
-        if case("title words:singular nouns"): return get_concatenated_subfield_values('989','2',record)
-        if case("title words:place names"): return get_concatenated_subfield_values('989','4',record)
-        if case("holding institution"): return get_institution(record)
+    return {
+
+        "id": get_pymarc_field_value('001',record),
+        "orig language (base)": get_original_language(record),
+        "author name": get_pymarc_subfield_value('100','a',record),
+        "author dates": get_pymarc_subfield_value('100','d',record),
+        "author transcribed": get_pymarc_subfield_value('245','c',record),
+        "title catalog": get_pymarc_field_value('245',record),
+        "title full": get_title_full(record),
+        "title half": get_title_half(record),
+        "title series": get_pymarc_subfield_value('490','a',record),
+        "246$v vols": get_vols_from_246(record),
+        "300$a vols": get_vols_from_300(record),
+        "300$a": get_concatenated_subfield_values('300','a',record),
+        "edition trans": get_pymarc_subfield_value('250','a',record),
+        "pub date": get_pymarc_field_value('008',record)[7:11],
+        "pub date transcribed": get_pymarc_subfield_value('260','c',record),
+        "pub location": get_pymarc_subfield_value('260','a',record),
+        "pub": get_persons("Printed for",record),
+        "pub transcribed": get_pymarc_subfield_value('260','b',record),
+        "printer": get_persons("Printed by",record),
+        "bookseller": get_persons("Sold by",record),
+        "pub notes": get_pymarc_subfield_value('260','x',record),
+        "format": get_pymarc_subfield_value('300','x',record),
+        "illustrations": get_pymarc_subfield_value('300','b',record),
+        "pub cataloger notes": get_concatenated_subfield_values('500','a',record),
+        "para:preface": get_paratext(PARA_TYPES[0],record),
+        "para:dedication": get_paratext(PARA_TYPES[1],record),
+        "para:advertisement": get_paratext(PARA_TYPES[2],record),
+        "para:to the reader": get_paratext(PARA_TYPES[3],record),
+        "para:intro": get_paratext(PARA_TYPES[4],record),
+        "para:notes": get_paratext(PARA_TYPES[5],record),
+        "para:footnotes": get_paratext(PARA_TYPES[6],record),
+        "para:other": get_paratext('other',record),
+        "epigraph source transcribed": get_epigraph_source_transcribed(record),
+        "narrative form primary": get_concatenated_subfield_values('592','a',record),
+        "narrative form secondary": get_concatenated_subfield_values('592','b',record),
+        "subscriber list": 'true' if record.get_fields('593') else '',
+        "inscription": 'true' if record.get_fields('594') else '',
+        "marginalia": 'true' if record.get_fields('595') else '',
+        "author claim": get_pymarc_subfield_value('599','a',record),
+        "author claim type": get_pymarc_subfield_value('599','b',record),
+        "author gender claim": get_pymarc_subfield_value('599','5',record),
+        "author gender": get_pymarc_subfield_value('599','6',record),
+        "advertisement genres": get_concatenated_subfield_values('656','a',record),
+        "title words:other works": get_concatenated_subfield_values('989','1',record),
+        "title words:singular nouns": get_concatenated_subfield_values('989','2',record),
+        "title words:place names": get_concatenated_subfield_values('989','4',record),
+        "holding institution": get_institution(record)
+
+    }.get(col_name,"")
 
 """Main"""
 
@@ -379,6 +333,7 @@ def main(filename,out_filename=""):
             for col in COLUMNS:
                 # for each record create row in tsv
                 curr_row[col] = get_value(col,record)
+            print(index)
             csv_writer.writerow(curr_row)
 
     return 0
