@@ -21,52 +21,52 @@ TODO:
 
 COLUMNS = [
         "id",
-        # "orig language (base)",
-        # "author name",
-        # "author dates",
-        # "author transcribed",
-        # "title catalog",
-        # "title full",
-        # "title half",
-        # "title series",
+        "orig language (base)",
+        "author name",
+        "author dates",
+        "author transcribed",
+        "title catalog",
+        "title full",
+        "title half",
+        "title series",
         # "246$v vols",
         # "300$a vols",
         "300$a",
-        # "edition trans",
-        # "pub date",
-        # "pub date transcribed",
-        # "pub location",
-        # "pub",
-        # "pub transcribed",
-        # "printer",
-        # "bookseller",
-        # "pub notes",
-        # "format",
-        # "illustrations",
-        # "pub cataloger notes",
-        # "para:preface",
-        # "para:dedication",
-        # "para:advertisement",
-        # "para:to the reader",
-        # "para:intro",
-        # "para:note",
-        # "para:other",
-        # "para:footnotes",
-        # "epigraph source transcribed",
-        # "narrative form primary",
-        # "narrative form secondary",
-        # "subscriber list",
-        # "inscription",
-        # "marginalia",
-        # "author claim",
-        # "author claim type",
-        # "author gender claim",
-        # "author gender",
-        # "advertisement genres",
-        # "title words:other works",
-        # "title words:singular nouns",
-        # "title words:place names",
-        # "holding institution"
+        "edition trans",
+        "pub date",
+        "pub date transcribed",
+        "pub location",
+        "pub",
+        "pub transcribed",
+        "printer",
+        "bookseller",
+        "pub notes",
+        "format",
+        "illustrations",
+        "pub cataloger notes",
+        "para:preface",
+        "para:dedication",
+        "para:advertisement",
+        "para:to the reader",
+        "para:intro",
+        "para:note",
+        "para:other",
+        "para:footnotes",
+        "epigraph source transcribed",
+        "narrative form primary",
+        "narrative form secondary",
+        "subscriber list",
+        "inscription",
+        "marginalia",
+        "author claim",
+        "author claim type",
+        "author gender claim",
+        "author gender",
+        "advertisement genres",
+        "title words:other works",
+        "title words:singular nouns",
+        "title words:place names",
+        "holding institution"
         ]
 
 PARA_TYPES = [
@@ -201,9 +201,9 @@ def get_persons(relator,record):
             persons.append(name['a'])
 
     pers_names = record.get_fields('700')
-        for name in pers_names:
-            if name['a'] and name['4'] and relator.lower() in name['4'].lower():
-                persons.append(name['a'])
+    for name in pers_names:
+        if name['a'] and name['4'] and relator.lower() in name['4'].lower():
+            persons.append(name['a'])
 
     return ' | '.join(persons)
 
