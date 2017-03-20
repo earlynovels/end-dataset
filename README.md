@@ -56,7 +56,7 @@ Derived from base catalog records, mostly from Penn Libraries OPAC. Not all END 
 $a language of the text (eng for English)
 $h language of the original text (if translated)
 - 043: Geographic area code
-- 090: Locally-assigned call number[f] (Obsolete--not part of standard MARC 21 Bibliographic format)
+- 090: Locally-assigned call number (Obsolete--not part of standard MARC 21 Bibliographic format)
 
 #### 100 Fields - Standardized author/title information (Derived from base catalog records)
 - 100: Author name
@@ -86,8 +86,7 @@ $a Running title on recto (recto)<br>
 $v Relevant volumes
 
 - 250: Edition statement<br>
-$a Transcription of full edition statement, including such terms as “revised,” “enlarged,” “annotated,” etc.
-<br>
+$a Transcription of full edition statement, including such terms as “revised,” “enlarged,” “annotated,” etc.<br>
 $b Controlled term for transcribed edition statement [“First edition,” “Second edition,” etc.]<br>
 $c Authorized edition number if different or absent from $a/$b<br>
 $x Transcriptions of edition/revision language in other paratext
