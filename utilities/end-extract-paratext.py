@@ -12,14 +12,20 @@ usage: $ python end-extract-paratext.py [path to xml].xml
 Creates a .tsv with the following fields: id | type | x | b | v
 
 """
-
-COLUMNS = [
+COLUMNS_WORK = [
         "id",
-        "type",
-        "x",
+        "title",
+        "author",
+        "date",
+        "type"
+        ]
+
+COLUMNS_CODES = [
         "b",
+        "x",
+        "c",
         "v"
-]
+        ]
 
 PARA_TYPES = [
         "preface",
@@ -207,13 +213,13 @@ def get_field_paratext_values(field,row):
 
     row['type'] = field['a']
 
-    codes = ['x','b','v']
+    codes = COLUMNS_CODES
 
     def get_subfield_values_list(field,code):
 
         values = []
         for subfield in field.get_subfields(code):
-            values.append(subfield)
+            values.append(subfield.replace('\\',''))
 
         return values if values else ""
 
@@ -272,18 +278,9 @@ def get_value(col_name,record):
 
     for case in switch(col_name):
         if case("id"): return get_pymarc_field_value('001',record)
-        if case("para:preface"): return get_paratext(PARA_TYPES[0],record)
-        if case("para:dedication"): return get_paratext(PARA_TYPES[1],record)
-        if case("para:advertisement"): return get_paratext(PARA_TYPES[2],record)
-        if case("para:to the reader"): return get_paratext(PARA_TYPES[3],record)
-        if case("para:intro"): return get_paratext(PARA_TYPES[4],record)
-        if case("para:notes"): return get_paratext(PARA_TYPES[5],record)
-        if case("para:footnotes"): return get_paratext(PARA_TYPES[6],record)
-        if case("para:other"): return get_paratext('other',record)
-        if case("epigraph source transcribed"): return get_epigraph_source_transcribed(record)
-        if case("inscription"): return 'true' if record.get_fields('594') else ''
-        if case("marginalia"): return 'true' if record.get_fields('595') else ''
-        if case("advertisement genres"): return get_concatenated_subfield_values('656','a',record)
+        if case("title"): return get_pymarc_field_value('245',record)
+        if case("author"): return get_pymarc_subfield_value('100','a',record)
+        if case("date"): return get_pymarc_field_value('008',record)[7:11]
 
 """Main"""
 
@@ -299,7 +296,11 @@ def main(filename,out_filename=""):
 
     with open(out_path,'w',newline='') as fh:
     # open output file
-        csv_writer = csv.DictWriter(fh,fieldnames=COLUMNS,delimiter="\t",quoting=csv.QUOTE_MINIMAL)
+        
+        columns = COLUMNS_WORK + COLUMNS_CODES
+
+        csv.register_dialect('marcxmltotsv',delimiter='\t',quoting=csv.QUOTE_NONE,quotechar='',doublequote=False,escapechar=None)
+        csv_writer = csv.DictWriter(fh,fieldnames=columns,dialect='marcxmltotsv')
         csv_writer.writeheader()
 
         # parse xml
@@ -310,17 +311,24 @@ def main(filename,out_filename=""):
         for record in collection:
             index += 1
 
-            curr_id = get_value('id',record)
+            curr_work = {}
+
+            for field in COLUMNS_WORK:
+                curr_work[field] = get_value(field, record)
 
             paratexts = record.get_fields('520')
+
 
             for paratext in paratexts:
 
                 curr_row = {}
-                curr_row['id'] = curr_id
+
+                for field in COLUMNS_WORK:
+                    curr_row[field] = curr_work[field]
+
                 curr_row = get_field_paratext_values(paratext,curr_row)
                 csv_writer.writerow(curr_row)
-
+                
     return 0
 
 if __name__ == '__main__':
