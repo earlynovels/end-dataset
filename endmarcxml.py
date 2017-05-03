@@ -236,6 +236,24 @@ def get_field_vol_values(field,codes,row):
 
     return row
 
+def get_field_989_values(fields,codes,row):
+    """return dictionary of values based on current work level 989 fields"""
+
+    for code in codes:
+        # for each subfield code in each datafield return a unique values list
+        curr_values = []
+
+        for field in fields:
+
+            for subfield in field.get_subfields(code):
+                curr_values.append(subfield.replace('\\','').strip())
+
+        # convert to set to limit unique values, sort list
+        curr_values = sorted(list(set(curr_values)))
+        row[code] = curr_values if curr_values else ""
+
+    return row
+
 def get_epigraph_source_transcribed(record):
     """return epigraph source and author as transcribed / 591$1 + 591$2"""
     epigraph_source = []
@@ -300,6 +318,7 @@ def get_work_metadata(record):
     curr_work_metadata = {}
 
     for field in COLUMNS_WORK:
+
         curr_work_metadata[field] = get_curr_work_metadata_field(field, record)
 
     return curr_work_metadata
