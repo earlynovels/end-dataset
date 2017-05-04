@@ -25,6 +25,8 @@ codes - marc codes of subfields to extract values
 
 """Main"""
 
+DATE_RANGE = []
+
 DATAFIELDS = [
 
     {
@@ -34,41 +36,41 @@ DATAFIELDS = [
         "codes": ["a","b","x","c","v"]
     },
 
-    # {
-    #     "desc": "epigraphs",
-    #     "tag": "591",
-    #     "codes": ["a","d","1","b","2","c","x","v"]
-    # },
+    {
+        "desc": "epigraphs",
+        "tag": "591",
+        "codes": ["a","d","1","b","2","c","x","v"]
+    },
 
-    # { 
-    #     "desc": "marginalia",
-    #     "tag": "595",
-    #     "codes": ["a","b","v","x"]
-    # },
+    { 
+        "desc": "marginalia",
+        "tag": "595",
+        "codes": ["a","b","v","x"]
+    },
 
-    # {
-    #     "desc": "inscriptions",
-    #     "tag": "594",
-    #     "codes": ["a","b","x","v"]
-    # },
+    {
+        "desc": "inscriptions",
+        "tag": "594",
+        "codes": ["a","b","x","v"]
+    },
 
-    # {
-    #     "desc": "authorship",
-    #     "tag": "599",
-    #     "codes": ["a","b","2","3","5","6","7"]
-    # },
+    {
+        "desc": "authorship",
+        "tag": "599",
+        "codes": ["a","b","2","3","5","6","7"]
+    },
 
-    # {
-    #     "desc": "translation",
-    #     "tag": "596",
-    #     "codes": ["a","b","c","d","e"]
-    # },
+    {
+        "desc": "translation",
+        "tag": "596",
+        "codes": ["a","b","c","d","e"]
+    },
 
-    # {
-    #     "desc": "forms",
-    #     "tag": "592",
-    #     "codes": ["a","b","c","d"]
-    # },
+    {
+        "desc": "forms",
+        "tag": "592",
+        "codes": ["a","b","c","d"]
+    },
 
     {
         "desc": "title-pos-ne",
@@ -92,7 +94,9 @@ def main(filename,out_filename=""):
             
             columns = emx.COLUMNS_WORK + field['codes']
 
-            csv.register_dialect('marcxmltotsv',delimiter='\t',quoting=csv.QUOTE_NONE,quotechar='',doublequote=False,escapechar=None)
+            csv.register_dialect('marcxmltotsv',\
+                delimiter='\t',quoting=csv.QUOTE_NONE,quotechar='',\
+                doublequote=False,escapechar=None)
             csv_writer = csv.DictWriter(fh,fieldnames=columns,dialect='marcxmltotsv')
 
             headers = {}
@@ -110,22 +114,40 @@ def main(filename,out_filename=""):
 
             csv_writer.writerow(headers)
 
-            for record in collection:
-                index += 1
 
-                curr_work = emx.get_work_metadata(record)
-                curr_fields = record.get_fields(field['tag'])
+            def get_curr_row(curr_fields,curr_work,tag):
 
-                if curr_fields and field['tag'] == '989':
+                curr_row = {}
+                if curr_fields and tag == '989':
                     curr_row = emx.get_field_989_values(curr_fields,field['codes'],curr_work)
-                    csv_writer.writerow(curr_row)
                 else:
                     for curr_field in curr_fields:
 
                         curr_row = curr_work
                         curr_row = emx.get_field_vol_values(curr_field,field['codes'],curr_row)
-                        csv_writer.writerow(curr_row)
+
+                return curr_row
+
+            for record in collection:
+
+                curr_work = emx.get_work_metadata(record)
+                curr_fields = record.get_fields(field['tag'])
+
+                if len(DATE_RANGE) < 2:
+
+                    curr_row = get_curr_row(curr_fields,curr_work,field['tag'])
+                    if curr_row: csv_writer.writerow(curr_row)
+                    continue
+
+                else:
+
+                    curr_date = emx.get_pymarc_field_value('008',record)[7:11].strip()
                     
+                    if len(curr_date) == 4 and int(curr_date) >= DATE_RANGE[0] \
+                    and int(curr_date) <= DATE_RANGE[1]:
+
+                        curr_row = get_curr_row(curr_fields,curr_work,field['tag'])
+                        if curr_row: csv_writer.writerow(curr_row)
         return 0
 
     

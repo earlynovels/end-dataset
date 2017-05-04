@@ -23,6 +23,8 @@ TODO:
 
 """
 
+DATE_RANGE = []
+
 COLUMNS = [
         "id",
         "leader",
@@ -92,22 +94,40 @@ def main(filename,out_filename=""):
 
     with open(out_path,'w',newline='') as fh:
     # open output file
-        csv.register_dialect('marcxmltotsv',delimiter='\t',quoting=csv.QUOTE_NONE,quotechar='',doublequote=False,escapechar=None)
+        csv.register_dialect('marcxmltotsv',\
+            delimiter='\t',quoting=csv.QUOTE_NONE,quotechar='',\
+            doublequote=False,escapechar=None)
         csv_writer = csv.DictWriter(fh,fieldnames=COLUMNS,dialect='marcxmltotsv')
         csv_writer.writeheader()
 
         # parse xml
         collection = marcxml.parse_xml_to_array(filename,strict=True)
 
-        index = 0
+        def get_curr_row(record):
 
-        for record in collection:
-            index += 1
             curr_row = {}
             for col in COLUMNS:
                 # for each record create row in tsv
                 curr_row[col] = emx.get_value(col,record)
-            csv_writer.writerow(curr_row)
+            return curr_row
+
+        for record in collection:
+
+            if len(DATE_RANGE) < 2:
+
+                curr_row = get_curr_row(record)
+                csv_writer.writerow(curr_row)
+                continue
+
+            else:
+
+                curr_date = emx.get_pymarc_field_value('008',record)[7:11].strip()
+
+                if len(curr_date) == 4 and int(curr_date) >= DATE_RANGE[0] \
+                and int(curr_date) <= DATE_RANGE[1]:
+
+                    curr_row = get_curr_row(record)
+                    csv_writer.writerow(curr_row)
 
     return 0
 
