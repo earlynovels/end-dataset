@@ -139,6 +139,14 @@ def get_vols_from_246(record):
     
     else: return ""
 
+def get_edition_controlled(record):
+    """ return edition controlled if 250$c else 250$b """
+
+    edition_controlled = get_pymarc_subfield_value('250','c',record)
+    if not edition_controlled: get_pymarc_subfield_value('250','b',record)
+
+    return edition_controlled
+
 def get_pub_location(record):
     """ return pub location based on added field """
 
@@ -339,7 +347,8 @@ def get_value(col_name,record):
         if case("300$a vols"): return get_vols_from_300(record)
         if case("300$a"): return get_subfield_values('300','a',record)
         if case("vols"): return get_vols(record)
-        if case("edition trans"): return get_pymarc_subfield_value('250','a',record)
+        if case("edition transcribed"): return get_pymarc_subfield_value('250','a',record)
+        if case("edition controlled"): return get_edition_controlled(record)
         if case("pub date"): return get_pymarc_field_value('008',record)[7:11]
         if case("pub date transcribed"): return get_pymarc_subfield_value('260','c',record)
         if case("pub location"): return get_pub_location(record)
@@ -374,3 +383,5 @@ def get_value(col_name,record):
         if case("title words:singular nouns"): return get_subfield_values('989','2',record)
         if case("title words:place names"): return get_subfield_values('989','4',record)
         if case("holding institution"): return get_institution(record)
+        if case("cataloger initials"): return get_pymarc_subfield_value('999','a',record)
+        if case("cataloger institution"): return get_pymarc_subfield_value('999','c',record)

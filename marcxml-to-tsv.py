@@ -19,15 +19,13 @@ COLUMNS constant list can be reordered or fields can be commented out and
 they will not appear in output file.
 
 TODO:
-- abstract so not so tightly bound to END marcXML needs
-- reconsider the problem of volumes
 - data checking, has not been tested robustly for accuracy
 
 """
 
 COLUMNS = [
         "id",
-        "orig language (base)",
+#       "orig language (base)",
         "author name",
         "author dates",
         "author transcribed",
@@ -39,7 +37,8 @@ COLUMNS = [
         # "300$a vols",
         # "300$a",
         "vols",
-        "edition trans",
+        "edition transcribed",
+        "edition controlled",
         "pub date",
         "pub date transcribed",
         "pub location",
@@ -73,7 +72,9 @@ COLUMNS = [
         "title words:other works",
         "title words:singular nouns",
         "title words:place names",
-        "holding institution"
+        "holding institution",
+        "cataloger initials",
+        "cataloger institution"
         ]
 
 """Main"""
@@ -102,7 +103,6 @@ def main(filename,out_filename=""):
         for record in collection:
             index += 1
             curr_row = {}
-
             for col in COLUMNS:
                 # for each record create row in tsv
                 curr_row[col] = emx.get_value(col,record)

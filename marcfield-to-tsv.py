@@ -27,12 +27,12 @@ codes - marc codes of subfields to extract values
 
 DATAFIELDS = [
 
-    # {
-    #     "desc": "paratexts",
-    #     "tag": "520",
-    #     "headers": ["type","transcription","notes","position","vol"],
-    #     "codes": ["a","b","x","c","v"]
-    # },
+    {
+        "desc": "paratexts",
+        "tag": "520",
+        "headers": ["type","transcription","notes","position","vol"],
+        "codes": ["a","b","x","c","v"]
+    },
 
     # {
     #     "desc": "epigraphs",
