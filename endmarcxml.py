@@ -143,7 +143,7 @@ def get_edition_controlled(record):
     """ return edition controlled if 250$c else 250$b """
 
     edition_controlled = get_pymarc_subfield_value('250','c',record)
-    if not edition_controlled: get_pymarc_subfield_value('250','b',record)
+    if not edition_controlled: edition_controlled = get_pymarc_subfield_value('250','b',record)
 
     return edition_controlled
 
@@ -335,6 +335,7 @@ def get_value(col_name,record):
 
     for case in switch(col_name):
         if case("id"): return get_pymarc_field_value('001',record)
+        if case("leader"): return record.leader
         if case("orig language (base)"): return get_original_language(record)
         if case("author name"): return get_pymarc_subfield_value('100','a',record)
         if case("author dates"): return get_pymarc_subfield_value('100','d',record)

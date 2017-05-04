@@ -25,6 +25,7 @@ TODO:
 
 COLUMNS = [
         "id",
+        "leader",
 #       "orig language (base)",
         "author name",
         "author dates",
@@ -106,7 +107,6 @@ def main(filename,out_filename=""):
             for col in COLUMNS:
                 # for each record create row in tsv
                 curr_row[col] = emx.get_value(col,record)
-            print(index)
             csv_writer.writerow(curr_row)
 
     return 0
