@@ -4,14 +4,16 @@
 [About the Dataset](#about-the-dataset)<br>
 [Explore the Dataset](#explore-the-dataset)<br>
 [END Custom MARC Schema](#end-custom-marc-schema)<br>
-[Tutorial and Visualization Demos](#tutorial-and-visualization-demos)
+[Tutorial and Visualization Demos](#Tutorial-Explore-Tabular-Subsets-with-Excel-Pivot-Tables)
 
 ## About the Project
 Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
 
 <br>
-<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name, such as title, illustration, etc." width="500">
+<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name, such as title, illustration, etc." width="500"> 
 <br>
+
+****
 
 ## About the Dataset
 The Early Novels Dataset contains bibliographic metadata for early works of fiction held in the [Collection of British and American Fiction, 1660-1830 (CBAF)](http://franklin.library.upenn.edu/search.html?filter.author_creator_facet.val=Collection%20of%20British%20and%20American%20Fiction%2C%201660-1830%20%28University%20of%20Pennsylvania%29) at the University of Pennsylvania’s [Kislak Center for Special Collections, Rare Books and Manuscripts](http://www.library.upenn.edu/kislak/), as well as other regional repositories. It consists of MARC catalog records enriched with custom subfields designed to offer new kinds of structured data about early fiction in English. 
@@ -20,13 +22,10 @@ The END dataset is comprised of high-quality, human-generated metadata that capt
 
 As of September 2017, the complete Early Novels Dataset totals 2,041 records. The core eighteenth-century subset consists of 1,325 records, which represent all of Penn Libraries’ Collection of British and American Fiction holdings published from 1700-1794 and a sampling of holdings published from 1795-1799. The core eighteenth-century subset consists of 1094 records, which represents all of Penn Libraries’ Collection of British and American Fiction holdings published between 1700 and 1789. A sample comparison of the CBAF holdings from the decade of the 1760s with all known fiction in English published during this period suggests that Penn's collection represents approximately 14% of this total corpus. In the core 1700-1789 END dataset, Penn holdings are supplemented by selected holdings from other Philadelphia-area and regional repositories, including the Library Company of Philadelphia, the Rosenbach, the Swarthmore Libraries Rare Book Room, Bryn Mawr College Special Collections, and New York University's Fales Library.
 
-### Background on the Collection
-Penn Libraries’ Collection of British and American Fiction is comprised of nearly three thousand works of early fiction in English. Its core is the Singer-Mendenhall Collection, built through the combined efforts of University of Pennsylvania graduate student Godfrey F. Singer and professor John C. Mendenhall in the first half of the twentieth century. The collection is notable for its has particular stregnths in epistolary fiction, It is notable for its strength in epistolary fiction  and  focused their collecting efforts on epistolary fiction, and the Singer-Mendenhall collection today has particular strengths in non-canonical epistolary fiction by female and anonymous authors. 
-
+****
 
 ## Explore the Dataset
 There are several ways to explore the END dataset. The most complete version of END data is encoded in a standard library record format called MARCXML. For ease of use, END data is also available in tabular subsets, which are designed to allow in-depth exploration of a number of specific features. This section will provide an overview of the two data formats and some of the ways you might work with either the full.xml file or the .tsv subsets we provide.
-
 
 ### Guide to Tabular Subsets 
 The full.tsv file available here is a pared-down version of the complete END dataset. It includes a curated selection of the data categories we envision as most relevant for most users, and is intended to provide an overview of the kinds of information END records make available. For instance, while the complete END dataset includes detailed information about 41 separate kinds of paratexts (that is, textual matter appended to the main text), most of our paratextual data falls within the top seven categories: Preface, Dedication, Advertisement, To the Reader, Introduction, Note, and Footnote. The full.tsv indicates whether any given record has information in these seven categories, and users interested in delving deeper can turn to the tabular subsets devoted exclusively to paratexts. These targeted subsets offer a more complete version of our data for these categories. 
@@ -36,11 +35,10 @@ In addition the full.tsv and the associated tabular subsets that offer detailed 
 The simplest ways to open and view our .tsv files will most likely be Google Sheets or Microsoft Excel. For either, simply open the file and choose "tab" when you are prompted for the delimiter. 
 
 #### Explore .tsv subsets with Excel Pivot Tables
-See our Excel Pivot Tables tutorial below for a demonstration of how you might begin to explore the data. [Note, however, that it is using data categories not included in our full.tsv; you can simply choose different column headers to work with.]
+See our [tutorial]((#Tutorial-Explore-Tabular-Subsets-with-Excel-Pivot-Tables) for a demonstration of how you might begin to explore the data. [Note, however, that it is using data categories not included in our full.tsv; you can simply choose different column headers to work with.]
 
 #### Explore .tsv subsets with Google Fusion Tables
 If you are interested in using Google Fusion Tables to explore END data, one place to start is a [digital assignment](https://github.com/rbuurma/rise-2017/blob/master/Assignments/Rise_assignment_6.md) created by END PI Rachel Buurma for her Rise of the Novel course at Swarthmore College.
-
 
 ### Guide to END MARCXML
 
@@ -285,7 +283,7 @@ $d Initials of second checker/proofreader
 
 ****
 
-## Tutorial: Explore .tsv subsets with Excel Pivot Tables
+## Tutorial: Explore Tabular Subsets with Excel Pivot Tables
 The complex, copy-specific nature of the data is designed for thoroughness rather than for quick analysis. In this section, we briefly consider a few way sample applications and uses for the data. We look forward to continuing to explore and hear how people use this data.
 
 ### 1. Copy-Specific Information
