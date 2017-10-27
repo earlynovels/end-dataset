@@ -1,6 +1,8 @@
 # END Dataset Documentation
 
 [About the Project](#about-the-project)<br>
+[About the Dataset](#about-the-dataset)<br>
+[Explore the Dataset](#explore-the-dataset)<br>
 [END Custom MARC Schema](#end-custom-marc-schema)<br>
 [Tutorial and Visualization Demos](#tutorial-and-visualization-demos)
 
@@ -22,7 +24,7 @@ As of September 2017, the complete Early Novels Dataset totals 2,041 records. Th
 Penn Libraries’ Collection of British and American Fiction is comprised of nearly three thousand works of early fiction in English. Its core is the Singer-Mendenhall Collection, built through the combined efforts of University of Pennsylvania graduate student Godfrey F. Singer and professor John C. Mendenhall in the first half of the twentieth century. The collection is notable for its has particular stregnths in epistolary fiction, It is notable for its strength in epistolary fiction  and  focused their collecting efforts on epistolary fiction, and the Singer-Mendenhall collection today has particular strengths in non-canonical epistolary fiction by female and anonymous authors. 
 
 
-## How to Explore the Dataset
+## Explore the Dataset
 There are several ways to explore the END dataset. The most complete version of END data is encoded in a standard library record format called MARCXML. For ease of use, END data is also available in tabular subsets, which are designed to allow in-depth exploration of a number of specific features. This section will provide an overview of the two data formats and some of the ways you might work with either the full.xml file or the .tsv subsets we provide.
 
 
@@ -45,30 +47,30 @@ If you are interested in using Google Fusion Tables to explore END data, one pla
 #### Work with MARCXML in OpenRefine
 Below are instructions for importing and exporting our full.xml file in OpenRefine. Doumentation and tutorials for using OpenRefine are widely available. 
 
-IMPORT into OpenRefine
-[1] MarcEdit
-Tools [MARCXML=>MARC]
- -make sure output path is selected (.mrc)
- -choose UTF8 encoding
- -no translation selected
-[3] MarcEdit main menu
-Tools -> OpenRefine -> Export Data to
- -rename output .tsv
-[4] OpenRefine
- -choose .tsv file
- -make sure everything interpreted as strings
+IMPORT into OpenRefine<br>
+[1] MarcEdit<br>
+  Tools [MARCXML=>MARC]<br>
+ -make sure output path is selected (.mrc)<br>
+ -choose UTF8 encoding<br>
+ -no translation selected<br>
+[3] MarcEdit main menu<br>
+ Tools -> OpenRefine -> Export Data to<br>
+ -rename output .tsv<br>
+[4] OpenRefine<br>
+ -choose .tsv file<br>
+ -make sure everything interpreted as strings<br>
  -deselect (if selected) quotation around columns with escaped characters
 
-EXPORT from OpenRefine
-[1] OpenRefine
- Export -> tab-separated values
-[2] MarcEdit
- Tools -> OpenRefine -> Import data from
- -select output path .mrc
-[3] MARC Tools
- -input / openrefine import .mrc file
- -output / .xml output path
- -select MARC => MARCXML
+EXPORT from OpenRefine<br>
+[1] OpenRefine<br>
+ Export -> tab-separated values<br>
+[2] MarcEdit<br>
+ Tools -> OpenRefine -> Import data from<br>
+ -select output path .mrc<br>
+[3] MARC Tools<br>
+ -input / openrefine import .mrc file<br>
+ -output / .xml output path<br>
+ -select MARC => MARCXML<br>
  -UTF8 encoding
 
 ### Transform MARCXML into Custom Tabular Data
