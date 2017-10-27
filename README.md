@@ -37,8 +37,8 @@ The simplest ways to open and view our .tsv files will most likely be Google She
 #### Explore .tsv subsets with Excel Pivot Tables
 See our [tutorial]((#Tutorial-Explore-Tabular-Subsets-with-Excel-Pivot-Tables) for a demonstration of how you might begin to explore the data. [Note, however, that it is using data categories not included in our full.tsv; you can simply choose different column headers to work with.]
 
-##### Explore .tsv subsets with Google Fusion Tables
-If you are interested in using Google Fusion Tables to explore END data, one place to start is a [digital assignment](https://github.com/rbuurma/rise-2017/blob/master/Assignments/Rise_assignment_6.md) created by END PI Rachel Buurma for her Rise of the Novel course at Swarthmore College. Keep in mind that this example is using a subset of END data created especially for the assignment, so it will be most useful as an introduction to Fusion Tables.
+<!---##### Explore .tsv subsets with Google Fusion Tables
+If you are interested in using Google Fusion Tables to explore END data, one place to start is a [digital assignment](https://github.com/rbuurma/rise-2017/blob/master/Assignments/Rise_assignment_6.md) created by END PI Rachel Buurma for her Rise of the Novel course at Swarthmore College. Keep in mind that this example is using a subset of END data created especially for the assignment, so it will be most useful as an introduction to Fusion Tables.--->
 
 ### Guide to END MARCXML
 
@@ -73,8 +73,8 @@ EXPORT from OpenRefine<br>
 
 ### Transform MARCXML into Custom Tabular Data
 
-#### With MarcEdit
-For a thorough introduction to MarcEdit in the context of research applications of library record data, a great place to start is this [screencast tutorial](http://pastispresent.org/2015/digital-humanities-2/converting-marc-records-to-a-spreadsheet-a-screencast-tutorial/) by Molly Hardy, the Director for Digital and Book History Initiatives at the American Antiquarian Society. There are many other tutorials and extensive documentation for MarcEdit available online. 
+<!---#### With MarcEdit
+For a thorough introduction to MarcEdit in the context of research applications of library record data, a great place to start is this [screencast tutorial](http://pastispresent.org/2015/digital-humanities-2/converting-marc-records-to-a-spreadsheet-a-screencast-tutorial/) by Molly Hardy, the Director for Digital and Book History Initiatives at the American Antiquarian Society. There are many other tutorials and extensive documentation for MarcEdit available online.---> 
 
 #### With Pymarc
 We have included here the working Pymarc scripts developed by END collaborator and Swarthmore Libraries Digital Initiatives Librarian Nabil Kashyap. These are working files not intended for use beyond the very specific and idiosyncratic MARCXML of the END dataset. We provide them solely as models for how you might use Pymarc to extract particular information from END MARCXML fields and subfields.  
