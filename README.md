@@ -21,10 +21,10 @@ As of September 2017, the complete Early Novels Dataset totals 2,041 records. Th
 ### Background on the Collection
 Penn Libraries’ Collection of British and American Fiction is comprised of nearly three thousand works of early fiction in English. Its core is the Singer-Mendenhall Collection, built through the combined efforts of University of Pennsylvania graduate student Godfrey F. Singer and professor John C. Mendenhall in the first half of the twentieth century. The collection is notable for its has particular stregnths in epistolary fiction, It is notable for its strength in epistolary fiction  and  focused their collecting efforts on epistolary fiction, and the Singer-Mendenhall collection today has particular strengths in non-canonical epistolary fiction by female and anonymous authors. 
 
-****
 
 ## How to Explore the Dataset
 There are several ways to explore the END dataset. The most complete version of END data is encoded in a standard library record format called MARCXML. For ease of use, END data is also available in tabular subsets, which are designed to allow in-depth exploration of a number of specific features. This section will provide an overview of the two data formats and some of the ways you might work with either the full.xml file or the .tsv subsets we provide.
+
 
 ### Guide to Tabular Subsets 
 The full.tsv file available here is a pared-down version of the complete END dataset. It includes a curated selection of the data categories we envision as most relevant for most users, and is intended to provide an overview of the kinds of information END records make available. For instance, while the complete END dataset includes detailed information about 41 separate kinds of paratexts (that is, textual matter appended to the main text), most of our paratextual data falls within the top seven categories: Preface, Dedication, Advertisement, To the Reader, Introduction, Note, and Footnote. The full.tsv indicates whether any given record has information in these seven categories, and users interested in delving deeper can turn to the tabular subsets devoted exclusively to paratexts. These targeted subsets offer a more complete version of our data for these categories. 
@@ -38,6 +38,7 @@ See our Excel Pivot Tables tutorial below for a demonstration of how you might b
 
 #### Explore .tsv subsets with Google Fusion Tables
 If you are interested in using Google Fusion Tables to explore END data, one place to start is a [digital assignment](https://github.com/rbuurma/rise-2017/blob/master/Assignments/Rise_assignment_6.md) created by END PI Rachel Buurma for her Rise of the Novel course at Swarthmore College.
+
 
 ### Guide to END MARCXML
 
@@ -83,7 +84,7 @@ While END’s primary focus is metadata, we are also in the preliminary stages o
 
 ****
 
-### END Custom MARC Schema
+## END Custom MARC Schema
 The MARC schema was designed specifically for bibliographic metadata, and when it is encoded as XML, it is the data format that most online library catalogs use. END records build on standard MARC library catalog records by adding custom, nonstandard MARC subfields that allow entirely new kinds of information to be collected. For information on the structure of standard MARC records, see the [Library of Congress MARC 21 schema](https://www.loc.gov/marc/bibliographic/), as well as the [Library of Congress guidelines for working with MARCXML](https://www.loc.gov/standards/marcxml/). 
 
 An explanation of the custom END MARC schema, including both standard and nonstandard subfields, can be found below. 
@@ -282,7 +283,7 @@ $d Initials of second checker/proofreader
 
 ****
 
-#### Tutorial: Explore .tsv subsets with Excel Pivot Tables
+## Tutorial: Explore .tsv subsets with Excel Pivot Tables
 The complex, copy-specific nature of the data is designed for thoroughness rather than for quick analysis. In this section, we briefly consider a few way sample applications and uses for the data. We look forward to continuing to explore and hear how people use this data.
 
 ### 1. Copy-Specific Information
