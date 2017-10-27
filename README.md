@@ -70,10 +70,10 @@ output / *.xml output path
 
 ### Transform MARCXML into Custom Tabular Data
 
-## With MarcEdit
+#### With MarcEdit
 For a thorough introduction to MarcEdit in the context of research applications of library record data, a great place to start is this [screencast tutorial](http://pastispresent.org/2015/digital-humanities-2/converting-marc-records-to-a-spreadsheet-a-screencast-tutorial/) by Molly Hardy, the Director for Digital and Book History Initiatives at the American Antiquarian Society. There are many other tutorials and extensive documentation for MarcEdit available online. 
 
-## With Pymarc
+#### With Pymarc
 We have included here the working Pymarc scripts developed by END collaborator and Swarthmore Libraries Digital Initiatives Librarian Nabil Kashyap. These are working files not intended for use beyond the very specific and idiosyncratic MARCXML of the END dataset. We provide them solely as models for how you might use Pymarc to extract particular information from END MARCXML fields and subfields.  
 
 ### Pair END Data with Fulltext for Topic Modeling
