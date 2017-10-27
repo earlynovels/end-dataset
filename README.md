@@ -21,6 +21,8 @@ As of September 2017, the complete Early Novels Dataset totals 2,041 records. Th
 ### Background on the Collection
 Penn Libraries’ Collection of British and American Fiction is comprised of nearly three thousand works of early fiction in English. Its core is the Singer-Mendenhall Collection, built through the combined efforts of University of Pennsylvania graduate student Godfrey F. Singer and professor John C. Mendenhall in the first half of the twentieth century. The collection is notable for its has particular stregnths in epistolary fiction, It is notable for its strength in epistolary fiction  and  focused their collecting efforts on epistolary fiction, and the Singer-Mendenhall collection today has particular strengths in non-canonical epistolary fiction by female and anonymous authors. 
 
+****
+
 ## How to Explore the Dataset
 There are several ways to explore the END dataset. The most complete version of END data is encoded in a standard library record format called MARCXML. For ease of use, END data is also available in tabular subsets, which are designed to allow in-depth exploration of a number of specific features. This section will provide an overview of the two data formats and some of the ways you might work with either the full.xml file or the .tsv subsets we provide.
 
@@ -37,12 +39,12 @@ See our Excel Pivot Tables tutorial below for a demonstration of how you might b
 #### Explore .tsv subsets with Google Fusion Tables
 If you are interested in using Google Fusion Tables to explore END data, one place to start is a [digital assignment](https://github.com/rbuurma/rise-2017/blob/master/Assignments/Rise_assignment_6.md) created by END PI Rachel Buurma for her Rise of the Novel course at Swarthmore College.
 
-## Guide to END MARCXML
+### Guide to END MARCXML
 
-### Work with MARCXML in OpenRefine
+#### Work with MARCXML in OpenRefine
 Below are instructions for importing and exporting our full.xml file in OpenRefine. Doumentation and tutorials for using OpenRefine are widely available. 
 
-#### IMPORT into OpenRefine
+##### IMPORT into OpenRefine
 [1] MarcEdit
 Tools [MARCXML=>MARC]
 -make sure output path is selected (*.mrc)
@@ -56,7 +58,7 @@ Tools -> OpenRefine -> Export Data to
 -make sure everything interpreted as strings
 -deselect (if selected) quotation around columns with escaped characters
 
-#### EXPORT from OpenRefine
+##### EXPORT from OpenRefine
 [1] OpenRefine
 Export -> tab-separated values
 [2] MarcEdit
