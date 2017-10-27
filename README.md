@@ -34,7 +34,7 @@ In addition the full.tsv and the associated tabular subsets that offer detailed 
 
 The simplest ways to open and view our .tsv files will most likely be Google Sheets or Microsoft Excel. For either, simply open the file and choose "tab" when you are prompted for the delimiter. 
 
-#### Explore .tsv subsets with Excel Pivot Tables
+#### Explore Tabular Subsets with Excel Pivot Tables
 See our [tutorial](#tutorial-and-visualization-demos) for a demonstration of how you might begin to explore the data. [Note, however, that it is using data categories not included in our full.tsv; you can simply choose different column headers to work with.]
 
 <!---##### Explore .tsv subsets with Google Fusion Tables
