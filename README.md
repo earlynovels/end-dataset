@@ -24,23 +24,23 @@ Penn Libraries’ Collection of British and American Fiction is comprised of nea
 #### How to Explore the Dataset
 There are several ways to explore the END dataset. The most complete version of END data is encoded in a standard library record format called MARCXML. For ease of use, END data is also available in tabular subsets, which are designed to allow in-depth exploration of a number of specific features. This section will provide an overview of the two data formats and some of the ways you might work with either the full.xml file or the .tsv subsets we provide.
 
-### Guide to Tabular Subsets 
+#### Guide to Tabular Subsets 
 The full.tsv file available here is a pared-down version of the complete END dataset. It includes a curated selection of the data categories we envision as most relevant for most users, and is intended to provide an overview of the kinds of information END records make available. For instance, while the complete END dataset includes detailed information about 41 separate kinds of paratexts (that is, textual matter appended to the main text), most of our paratextual data falls within the top seven categories: Preface, Dedication, Advertisement, To the Reader, Introduction, Note, and Footnote. The full.tsv indicates whether any given record has information in these seven categories, and users interested in delving deeper can turn to the tabular subsets devoted exclusively to paratexts. These targeted subsets offer a more complete version of our data for these categories. 
 
 In addition the full.tsv and the associated tabular subsets that offer detailed information about each category of paratext, we have also broken down the data by period to enable users to examine the eighteenth and nineteenth centuries separately. So while the full.tsv contains records for works published as early as 1660 and as late as 1853, you can choose the 18c-full.tsv to look only at records published from 1700-1799, and the 19c-full.tsv for records with publication dates from 1800-1853. We also offer the full range of paratextual subsets broken down by eighteenth and nineteenth centuries. 
 
 The simplest ways to open and view our .tsv files will most likely be Google Sheets or Microsoft Excel. For either, simply open the file and choose "tab" when you are prompted for the delimiter. 
 
-###Explore .tsv subsets with Excel Pivot Tables
+### Explore .tsv subsets with Excel Pivot Tables
 See our Excel Pivot Tables tutorial below for a demonstration of how you might begin to explore the data. [Note, however, that it is using data categories not included in our full.tsv; you can simply choose different column headers to work with.]
 
-###Explore .tsv subsets with Google Fusion Tables
-If you are interested in using Google Fusion Tables to explore END data, one place to start is END PI Rachel Buurma's digital assignment[ rise-2017/Assignments/Rise_assignment_6.md ] for the students in her Rise of the Novel course at Swarthmore College. 
+### Explore .tsv subsets with Google Fusion Tables
+If you are interested in using Google Fusion Tables to explore END data, one place to start is a [digital assignment](https://github.com/rbuurma/rise-2017/blob/master/Assignments/Rise_assignment_6.md) created by END PI Rachel Buurma for her Rise of the Novel course at Swarthmore College.
 
-###Work with MARCXML in OpenRefine
+### Work with MARCXML in OpenRefine
 Below are instructions for importing and exporting our full.xml file in OpenRefine. Doumentation and tutorials for using OpenRefine are widely available. 
 
-#IMPORT into MarcEdit/OpenRefine
+# IMPORT into MarcEdit/OpenRefine
 [1]MarcEdit
 [2]MarcTools [MARCXML=>MARC]
 make sure output path is selected (*.mrc)
@@ -54,7 +54,7 @@ choose *.tsv file
 make sure everything interpreted as strings
 deselect (if selected) quotation around columns with escaped characters
 
-#EXPORT from OpenRefine/MarcEdit
+# EXPORT from OpenRefine/MarcEdit
 OpenRefine / export -> tab-separated values
 MarcEdit / tools -> openrefine -> import data from …
 select output path *.mrc
@@ -64,15 +64,15 @@ output / *.xml output path
 select MARC => MARCXML
 UTF8 encoding
 
-###Transform MARCXML into Custom Tabular Data
+### Transform MARCXML into Custom Tabular Data
 
-##With MarcEdit
+## With MarcEdit
 For a thorough introduction to MarcEdit in the context of research applications of library record data, a great place to start is this [screencast tutorial](http://pastispresent.org/2015/digital-humanities-2/converting-marc-records-to-a-spreadsheet-a-screencast-tutorial/) by Molly Hardy, the Director for Digital and Book History Initiatives at the American Antiquarian Society. There are many other tutorials and extensive documentation for MarcEdit available online. 
 
-##With Pymarc
+## With Pymarc
 We have included here the working Pymarc scripts developed by END collaborator and Swarthmore Libraries Digital Initiatives Librarian Nabil Kashyap. These are working files not intended for use beyond the very specific and idiosyncratic MARCXML of the END dataset. We provide them solely as models for how you might use Pymarc to extract particular information from END MARCXML fields and subfields.  
 
-###Pair END Data with Fulltext for Topic Modeling
+### Pair END Data with Fulltext for Topic Modeling
 While END’s primary focus is metadata, we are also in the preliminary stages of a fulltext initiative for the CBAF novels digitized by Penn Libraries and available through Print at Penn. We have created fulltext files for each of these texts using OCR; cleanup work is ongoing, both computationally and through hand-correcting. The fulltext is available in our digital-collection repostiory. We have also worked with Penn Libraries' Digital Humanities Specialist Scott Enderle to experiment with topic modeling of this fulltext combined with END metadata. Work-in-progress can be found in our [earlynovels-topic-model repository](https://github.com/earlynovels/earlynovels-topic-model), and Scott's enhanced Topic Modeling Tool, which enables pairing fulltext with metadata, can be found [here](https://github.com/senderle/topic-modeling-tool). 
 
 ****
