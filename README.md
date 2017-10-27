@@ -4,7 +4,7 @@
 [About the Dataset](#about-the-dataset)<br>
 [Explore the Dataset](#explore-the-dataset)<br>
 [END Custom MARC Schema](#end-custom-marc-schema)<br>
-[Tutorial and Visualization Demos](#Tutorial-Explore-Tabular-Subsets-with-Excel-Pivot-Tables)
+[Tutorial and Visualization Demos](#tutorial-and-visualization-demos)
 
 ## About the Project
 Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
@@ -35,7 +35,7 @@ In addition the full.tsv and the associated tabular subsets that offer detailed 
 The simplest ways to open and view our .tsv files will most likely be Google Sheets or Microsoft Excel. For either, simply open the file and choose "tab" when you are prompted for the delimiter. 
 
 #### Explore .tsv subsets with Excel Pivot Tables
-See our [tutorial](#Tutorial:-Explore-Tabular-Subsets-with-Excel-Pivot-Tables) for a demonstration of how you might begin to explore the data. [Note, however, that it is using data categories not included in our full.tsv; you can simply choose different column headers to work with.]
+See our [tutorial](#tutorial-and-visualization-demos) for a demonstration of how you might begin to explore the data. [Note, however, that it is using data categories not included in our full.tsv; you can simply choose different column headers to work with.]
 
 <!---##### Explore .tsv subsets with Google Fusion Tables
 If you are interested in using Google Fusion Tables to explore END data, one place to start is a [digital assignment](https://github.com/rbuurma/rise-2017/blob/master/Assignments/Rise_assignment_6.md) created by END PI Rachel Buurma for her Rise of the Novel course at Swarthmore College. Keep in mind that this example is using a subset of END data created especially for the assignment, so it will be most useful as an introduction to Fusion Tables.--->
@@ -283,7 +283,7 @@ $d Initials of second checker/proofreader
 
 ****
 
-## Tutorial: Explore Tabular Subsets with Excel Pivot Tables
+## Tutorial and Visualization Demos
 The complex, copy-specific nature of the data is designed for thoroughness rather than for quick analysis. In this section, we briefly consider a few way sample applications and uses for the data. We look forward to continuing to explore and hear how people use this data.
 
 ### 1. Copy-Specific Information
