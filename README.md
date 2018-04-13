@@ -45,31 +45,31 @@ If you are interested in using Google Fusion Tables to explore END data, one pla
 #### Work with MARCXML in OpenRefine
 Below are instructions for importing and exporting our full.xml file in OpenRefine. Doumentation and tutorials for using OpenRefine are widely available. 
 
-IMPORT into OpenRefine<br>
-[1] MarcEdit<br>
-  Tools [MARCXML=>MARC]<br>
- -make sure output path is selected (.mrc)<br>
- -choose UTF8 encoding<br>
- -no translation selected<br>
-[3] MarcEdit main menu<br>
- Tools -> OpenRefine -> Export Data to<br>
- -rename output .tsv<br>
-[4] OpenRefine<br>
- -choose .tsv file<br>
- -make sure everything interpreted as strings<br>
- -deselect (if selected) quotation around columns with escaped characters
+#### IMPORT into OpenRefine
+##### [1] MarcEdit
+- Tools [MARCXML=>MARC]
+    - Make sure output path is selected (*.mrc)
+    - Choose UTF8 encoding
+    - No translation selected
+##### [2] MarcEdit Main Menu
+- Tools [OpenRefine -> Export Data to]
+    - Rename output *.tsv
+##### [3] OpenRefine
+- Choose *.tsv file
+- Make sure everything interpreted as strings
+- Deselect (if selected) quotation around columns with escaped characters
 
-EXPORT from OpenRefine<br>
-[1] OpenRefine<br>
- Export -> tab-separated values<br>
-[2] MarcEdit<br>
- Tools -> OpenRefine -> Import data from<br>
- -select output path .mrc<br>
-[3] MARC Tools<br>
- -input / openrefine import .mrc file<br>
- -output / .xml output path<br>
- -select MARC => MARCXML<br>
- -UTF8 encoding
+#### EXPORT from OpenRefine
+##### [1] OpenRefine
+- Export -> Tab-separated values
+##### [2] MarcEdit
+- Tools -> OpenRefine -> Import data from
+  - Select output path *.mrc
+##### [3] MARC Tools
+- Input / openrefine import *.mrc file
+- Output / *.xml output path
+  - Select MARC => MARCXML
+  - UTF8 encoding
 
 #### Transform MARCXML into Custom Tabular Data
 
