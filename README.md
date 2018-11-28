@@ -7,32 +7,32 @@
 [Tutorial and Visualization Demos](#tutorial-and-visualization-demos)
 
 ## About the Project
-Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century. 
+Early works of fiction often have detailed title pages, plot summaries, complex tables of contents, lengthy titles and endnotes, and elaborate prefaces. The [Early Novels Database (END) project](http://www.earlynovels.org) creates rich bibliographic metadata that captures these features in fields that enable new forms of research on English-language fiction of the long eighteenth century.
 
 <br>
-<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name, such as title, illustration, etc." width="500"> 
+<img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Title%20Page%20Pic.png" alt="Shows a photo of title page with various fields labeled by name, such as title, illustration, etc." width="500">
 <br>
 
 ****
 
 ## About the Dataset
-The Early Novels Dataset contains bibliographic metadata for early works of fiction held in the [Collection of British and American Fiction, 1660-1830 (CBAF)](http://franklin.library.upenn.edu/search.html?filter.author_creator_facet.val=Collection%20of%20British%20and%20American%20Fiction%2C%201660-1830%20%28University%20of%20Pennsylvania%29) at the University of Pennsylvania’s [Kislak Center for Special Collections, Rare Books and Manuscripts](http://www.library.upenn.edu/kislak/), as well as other regional repositories. It consists of MARC catalog records enriched with custom subfields designed to offer new kinds of structured data about early fiction in English. 
+The Early Novels Dataset contains bibliographic metadata for early works of fiction held in the [Collection of British and American Fiction, 1660-1830 (CBAF)](http://franklin.library.upenn.edu/search.html?filter.author_creator_facet.val=Collection%20of%20British%20and%20American%20Fiction%2C%201660-1830%20%28University%20of%20Pennsylvania%29) at the University of Pennsylvania’s [Kislak Center for Special Collections, Rare Books and Manuscripts](http://www.library.upenn.edu/kislak/), as well as other regional repositories. It consists of MARC catalog records enriched with custom subfields designed to offer new kinds of structured data about early fiction in English.
 
-The END dataset is comprised of high-quality, human-generated metadata that captures a much fuller range of edition- and copy-specific information about early novels than traditional library catalog records. The END metadata schema builds on library-standard MARC records with custom-designed subfields that use both controlled and discursive vocabularies to describe a range of bibliographic features outside the scope of traditional cataloging. These include important bibliographic details such as authority statements, full and half title, accurate and controlled place of publication, and edition statement. They capture both copy-specific information about marginalia, inscriptions, and bookplates as well as title-level data on narrative form. And finally, they record the presence of important paratextual features like authors’ notes, epigraphs, footnotes, and indices, which can be found in many works of early fiction but have never been cataloged in a systematic way that would enable faceted search across a corpus. 
+The END dataset is comprised of high-quality, human-generated metadata that captures a much fuller range of edition- and copy-specific information about early novels than traditional library catalog records. The END metadata schema builds on library-standard MARC records with custom-designed subfields that use both controlled and discursive vocabularies to describe a range of bibliographic features outside the scope of traditional cataloging. These include important bibliographic details such as authority statements, full and half title, accurate and controlled place of publication, and edition statement. They capture both copy-specific information about marginalia, inscriptions, and bookplates as well as title-level data on narrative form. And finally, they record the presence of important paratextual features like authors’ notes, epigraphs, footnotes, and indices, which can be found in many works of early fiction but have never been cataloged in a systematic way that would enable faceted search across a corpus.
 
-As of September 2017, the complete Early Novels Dataset totals 2,041 records. The core eighteenth-century subset consists of 1,325 records, which represent all of Penn Libraries’ Collection of British and American Fiction holdings published from 1700-1794 and a sampling of holdings published from 1795-1799. A sample comparison of the CBAF holdings from the decade of the 1760s with all known fiction in English published during this period suggests that Penn's collection represents approximately 14% of this total corpus. In the core eighteenth-century subset, Penn's holdings are supplemented with selected holdings from other Philadelphia-area and regional repositories, including the Library Company of Philadelphia, the Rosenbach, the Swarthmore Libraries Rare Book Room, Bryn Mawr College Special Collections, and New York University's Fales Library.
+As of November 2018, the complete Early Novels Dataset totals 2,002 records. The core eighteenth-century subset consists of 1,440 records, which represent all of Penn Libraries’ Collection of British and American Fiction holdings published from 1700-1797 and a sampling of holdings published from 1798-1799. A sample comparison of the CBAF holdings from the decade of the 1760s with all known fiction in English published during this period suggests that Penn's collection represents approximately 14% of this total corpus. In the core eighteenth-century subset, Penn's holdings are supplemented with selected holdings from other Philadelphia-area and regional repositories, including the Library Company of Philadelphia, the Rosenbach, the Swarthmore Libraries Rare Book Room, Bryn Mawr College Special Collections, and New York University's Fales Library.
 
 ****
 
 ## Explore the Dataset
 There are several ways to explore the END dataset. The most complete version of END data is encoded in a standard library record format called MARCXML. For ease of use, END data is also available in tabular subsets, which are designed to allow in-depth exploration of a number of specific features. This section will provide an overview of the two data formats and some of the ways you might work with either the full.xml file or the .tsv subsets we provide.
 
-### Guide to Tabular Subsets 
-The full.tsv file available here is a pared-down version of the complete END dataset. It includes a curated selection of the data categories we envision as most relevant for most users, and is intended to provide an overview of the kinds of information END records make available. For instance, while the complete END dataset includes detailed information about 41 separate kinds of paratexts (that is, textual matter appended to the main text), most of our paratextual data falls within the top seven categories: Preface, Dedication, Advertisement, To the Reader, Introduction, Note, and Footnote. The full.tsv indicates whether any given record has information in these seven categories, and users interested in delving deeper can turn to the tabular subsets devoted exclusively to paratexts. These targeted subsets offer a more complete version of our data for these categories. 
+### Guide to Tabular Subsets
+The full.tsv file available here is a pared-down version of the complete END dataset. It includes a curated selection of the data categories we envision as most relevant for most users, and is intended to provide an overview of the kinds of information END records make available. For instance, while the complete END dataset includes detailed information about 41 separate kinds of paratexts (that is, textual matter appended to the main text), most of our paratextual data falls within the top seven categories: Preface, Dedication, Advertisement, To the Reader, Introduction, Note, and Footnote. The full.tsv indicates whether any given record has information in these seven categories, and users interested in delving deeper can turn to the tabular subsets devoted exclusively to paratexts. These targeted subsets offer a more complete version of our data for these categories.
 
-In addition the full.tsv and the associated tabular subsets that offer detailed information about each category of paratext, we have also broken down the data by period to enable users to examine the eighteenth and nineteenth centuries separately. So while the full.tsv contains records for works published as early as 1660 and as late as 1853, you can choose the 18c-full.tsv to look only at records published from 1700-1799, and the 19c-full.tsv for records with publication dates from 1800-1853. We also offer the full range of paratextual subsets broken down by eighteenth and nineteenth centuries. 
+In addition the full.tsv and the associated tabular subsets that offer detailed information about each category of paratext, we have also broken down the data by period to enable users to examine the eighteenth and nineteenth centuries separately. So while the full.tsv contains records for works published as early as 1660 and as late as 1853, you can choose the 18c-full.tsv to look only at records published from 1700-1799, and the 19c-full.tsv for records with publication dates from 1800-1853. We also offer the full range of paratextual subsets broken down by eighteenth and nineteenth centuries.
 
-The simplest ways to open and view our .tsv files will most likely be Google Sheets or Microsoft Excel. For either, simply open the file and choose "tab" when you are prompted for the delimiter. 
+The simplest ways to open and view our .tsv files will most likely be Google Sheets or Microsoft Excel. For either, simply open the file and choose "tab" when you are prompted for the delimiter.
 
 #### Explore Tabular Subsets with Excel Pivot Tables
 See our [tutorial](#tutorial-and-visualization-demos) for a demonstration of how you might begin to explore the data. [Note, however, that it is using data categories not included in our full.tsv; you can simply choose different column headers to work with.]
@@ -43,7 +43,7 @@ If you are interested in using Google Fusion Tables to explore END data, one pla
 ### Guide to END MARCXML
 
 #### Work with MARCXML in OpenRefine
-Below are instructions for importing and exporting our full.xml file in OpenRefine. Doumentation and tutorials for using OpenRefine are widely available. 
+Below are instructions for importing and exporting our full.xml file in OpenRefine. Doumentation and tutorials for using OpenRefine are widely available.
 
 ##### IMPORT into OpenRefine
 1. MarcEdit
@@ -74,25 +74,25 @@ Below are instructions for importing and exporting our full.xml file in OpenRefi
 #### Transform MARCXML into Custom Tabular Data
 
 <!---#### With MarcEdit
-For a thorough introduction to MarcEdit in the context of research applications of library record data, a great place to start is this [screencast tutorial](http://pastispresent.org/2015/digital-humanities-2/converting-marc-records-to-a-spreadsheet-a-screencast-tutorial/) by Molly Hardy, the Director for Digital and Book History Initiatives at the American Antiquarian Society. There are many other tutorials and extensive documentation for MarcEdit available online.---> 
+For a thorough introduction to MarcEdit in the context of research applications of library record data, a great place to start is this [screencast tutorial](http://pastispresent.org/2015/digital-humanities-2/converting-marc-records-to-a-spreadsheet-a-screencast-tutorial/) by Molly Hardy, the Director for Digital and Book History Initiatives at the American Antiquarian Society. There are many other tutorials and extensive documentation for MarcEdit available online.--->
 
 <!---#### With Pymarc--->
 We have included here the working Pymarc scripts developed by END collaborator and Swarthmore Libraries Digital Initiatives Librarian Nabil Kashyap. These are working files not intended for use beyond the very specific and idiosyncratic MARCXML of the END dataset. We provide them solely as models for how you might use Pymarc to extract particular information from END MARCXML fields and subfields.  
 
 ### Pair END Data with Fulltext for Topic Modeling
-While END’s primary focus is metadata, we are also in the preliminary stages of a fulltext initiative for the CBAF novels digitized by Penn Libraries and available through Print at Penn. We have created fulltext files for each of these texts using OCR; cleanup work is ongoing, both computationally and through hand-correcting. The fulltext is available in our digital-collection repostiory. We have also worked with Penn Libraries' Digital Humanities Specialist Scott Enderle to experiment with topic modeling of this fulltext combined with END metadata. Work-in-progress can be found in our [earlynovels-topic-model repository](https://github.com/earlynovels/earlynovels-topic-model), and Scott's enhanced Topic Modeling Tool, which enables pairing fulltext with metadata, can be found [here](https://github.com/senderle/topic-modeling-tool). 
+While END’s primary focus is metadata, we are also in the preliminary stages of a fulltext initiative for the CBAF novels digitized by Penn Libraries and available through Print at Penn. We have created fulltext files for each of these texts using OCR; cleanup work is ongoing, both computationally and through hand-correcting. The fulltext is available in our digital-collection repostiory. We have also worked with Penn Libraries' Digital Humanities Specialist Scott Enderle to experiment with topic modeling of this fulltext combined with END metadata. Work-in-progress can be found in our [earlynovels-topic-model repository](https://github.com/earlynovels/earlynovels-topic-model), and Scott's enhanced Topic Modeling Tool, which enables pairing fulltext with metadata, can be found [here](https://github.com/senderle/topic-modeling-tool).
 
 ****
 
 ## END Custom MARC Schema
-The MARC schema was designed specifically for bibliographic metadata, and when it is encoded as XML, it is the data format that most online library catalogs use. END records build on standard MARC library catalog records by adding custom, nonstandard MARC subfields that allow entirely new kinds of information to be collected. For information on the structure of standard MARC records, see the [Library of Congress MARC 21 schema](https://www.loc.gov/marc/bibliographic/), as well as the [Library of Congress guidelines for working with MARCXML](https://www.loc.gov/standards/marcxml/). 
+The MARC schema was designed specifically for bibliographic metadata, and when it is encoded as XML, it is the data format that most online library catalogs use. END records build on standard MARC library catalog records by adding custom, nonstandard MARC subfields that allow entirely new kinds of information to be collected. For information on the structure of standard MARC records, see the [Library of Congress MARC 21 schema](https://www.loc.gov/marc/bibliographic/), as well as the [Library of Congress guidelines for working with MARCXML](https://www.loc.gov/standards/marcxml/).
 
-An explanation of the custom END MARC schema, including both standard and nonstandard subfields, can be found below. 
+An explanation of the custom END MARC schema, including both standard and nonstandard subfields, can be found below.
 
-#### 000 Fields - Bibliographic Data 
+#### 000 Fields - Bibliographic Data
 Derived from base catalog records, mostly from Penn Libraries OPAC. Not all END records are built on top of base records, however, so in some END records only the 001 field is present. <br>
 
-- 001: END Control Number: Control numbers in the 001 field follow different systems depending on the year in which the work was cataloged, but all are unique. Each record in the dataset has a unique identifier. 
+- 001: END Control Number: Control numbers in the 001 field follow different systems depending on the year in which the work was cataloged, but all are unique. Each record in the dataset has a unique identifier.
   - All records cataloged to 2013 have randomly-generated sequential ID numbers in the 001 field. Most from Penn include Franklin BibIDs are included in the 035 field, but many do not include OCLC numbers. These were cataloged from several different institutions: Penn RBML (now Kislak), Swarthmore College, Bryn Mawr, Library Company, etc.
   - All records cataloged in the summer of 2014 were cataloged in google sheets and converted to XML. They are missing some of the automated fields that are present in the records that used Franklin catalog records as base entries. They have been remediated to have ID numbers in the 001 field, these follow the sequential schema of the voyager records from 2013 and before.
   - Records cataloged from the summer of 2015 and from the 2015-2016 academic year have Franklin BibIDs in the 001 field. Duplicate BibIDs are denoted with a -1 -2 etc.
@@ -107,7 +107,7 @@ Derived from base catalog records, mostly from Penn Libraries OPAC. Not all END 
     ```
     <marc:controlfield tag="008">851011m18161817enkc              00010aeng d</marc:controlfield>
     ```
-  - To sort on pub date, pull only the first date in positions/bytes 7-10. 
+  - To sort on pub date, pull only the first date in positions/bytes 7-10.
 - 035: System Control Number (local control numbers - usually Penn BibID, Call Number, OCLC, etc. Not all records have entries in the 035 field.)
 - 040: Location ID (For records with Franklin base entries, this is PU, MARC organization code for University of Pennsylvania)
 - 041: Language code
@@ -167,7 +167,7 @@ $a Extent—the number of pages or volumes<br>
 $b Illustrations, if any included in work [“Ill.”, “Ill. (frontispiece),” “Col. Ill.”, “Port.”, “Map”]. Descriptions appear in 500 "General Notes" field. <br>
 $c Dimensions<br>
 $x Format, controlled term [“Folio,” “Duodecimo,” etc.]<br>
-$z Work qualifiers such as “In two volumes,” “in five parts” 
+$z Work qualifiers such as “In two volumes,” “in five parts”
 
 #### 400 Fields - Collections
 - 490: Ind1=0 Collections (Published Collection, as in “Collected works of ---” or the like, not the library collection.) <br>
@@ -176,7 +176,7 @@ $x Notes explaining relation between work and collection
 
 #### 500 Fields - Added fields, interpretive and analytic metadata, copy-specific metadata
 - 500: General notes—new datafield for each note<br>
-$a Notes that do not fit into other categories, such as bookplates, library marginalia, interesting material characteristics, etc. 
+$a Notes that do not fit into other categories, such as bookplates, library marginalia, interesting material characteristics, etc.
 
 - 520: Paratext<br>
 $a Type of paratext. Standardized terms so far include [About the Author, To the Author, Advertisement [only used if the “Advertisement” is actually a paratextual essay], Afterword,  Apology, Appendix, Character information, Character note, Colophon, Conclusion, Copyright statement, Dedication, Endnotes, Epilogue, Errata, Essay, Footnotes, Glossary, Index, Introduction, Key, Letter, License, List of characters, Memoir, Note, Official note, Poem, Postscript, Preface, Prologue, Review, Subscribers' list, Table of contents, To the Booksellers, To the Reader, To the Reviewer, To the Subscriber, Other]<br>
@@ -289,25 +289,25 @@ The complex, copy-specific nature of the data is designed for thoroughness rathe
 ### 1. Copy-Specific Information
 One strength of END is the it gives researchers the ability to delve deeply into a particular text, volume, or author. For example, if you are interested in Henry Fielding, you can set up a filter to see just his works in our tabular data. From here, it's easier to dig into specific information, such as comparisons in early and later editions of the same work, or between British and American editions.
 
-The following shows how to set up a filter in two variables. (We use Excel here, but this will also work in Google Sheets, etc.) 
+The following shows how to set up a filter in two variables. (We use Excel here, but this will also work in Google Sheets, etc.)
 
 ![Shows using a filter on two variables in Excel. Click on "filter," choose variables at the top of the columnns.](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Filter%20Demo%203.gif "Filters Demo")
 
 
 ### 2. Comparative Information
-Pivot tables, which can be created quickly in Microsoft Excel or Google Sheets, allow you to compare multiple variables. Please note that depending on the field and your question, the data may need to be cleaned and organized first (we recommend <a href="http://openrefine.org/">OpenRefine</a>). 
+Pivot tables, which can be created quickly in Microsoft Excel or Google Sheets, allow you to compare multiple variables. Please note that depending on the field and your question, the data may need to be cleaned and organized first (we recommend <a href="http://openrefine.org/">OpenRefine</a>).
 
-Here, we imagine that the scholar is interested in seeing details of how the database was created, recorded in our 999 fields. 
+Here, we imagine that the scholar is interested in seeing details of how the database was created, recorded in our 999 fields.
 
-First, we highlight the information that interests us, and create the pivot table. 
+First, we highlight the information that interests us, and create the pivot table.
 
 ![Show how to create a pivot table. Highlight columns, right click, "Insert pivot table," add new sheet.](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Create%20Pivot.gif "Pivot Table Create Demo")
 
-Next, we add the data to different fields to compare information, and then we create a chart. 
+Next, we add the data to different fields to compare information, and then we create a chart.
 
 ![Show how to go from pivot table to chart. Pick rows and values, then click in table, Insert -> chart. (Pie chart in demo.)](https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Pivot%20to%20Chart.gif "Pivot Table to Chart Demo")
 
-With the pivot table, we're able to create a couple of different types of visuals by manipulating the variables in different columns. 
+With the pivot table, we're able to create a couple of different types of visuals by manipulating the variables in different columns.
 
 For example, we examine dates vs. schools (drag 999$b to "rows" and 999$c to "columns" and "values") to create the following visual on the institutional affiliation of our catalogers. In this, you can see that the END project has recently expanded to a broader set of institutions.
 <br>
@@ -315,7 +315,7 @@ For example, we examine dates vs. schools (drag 999$b to "rows" and 999$c to "co
 <br>
 
 
-Next, we examined catalogers vs. schools (999$c to "rows" and "values") to show how many catalog records we have from each of our different institutions. NYU is new to the project, but has already added a significant number of records, for example. 
+Next, we examined catalogers vs. schools (999$c to "rows" and "values") to show how many catalog records we have from each of our different institutions. NYU is new to the project, but has already added a significant number of records, for example.
 <br>
 <img src="https://github.com/earlynovels/end-dataset/blob/master/Tutorial%20Images/END%20Pic%20Catalogers%20by%20Institution.png" alt="Catalogers by institution: shows different institutions involved." width="500">
 <br>
